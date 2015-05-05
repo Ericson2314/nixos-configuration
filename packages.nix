@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs;
     [ # Shells
       zsh
-      
+
       # Editors
       vim
       emacs
@@ -22,12 +22,13 @@
 
       # Desktop Env
       dmenu
-      
+
       # Bits of Gnome
       # gnome3.gnome_terminal
-	  evince
+      evince
 
-	  termite
+      # Terminal emulator
+      termite
 
       # Admin
       gparted

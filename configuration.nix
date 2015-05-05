@@ -19,7 +19,7 @@
       # filesystem.
       "btrfs" # "ata_piix"
     ];
-  
+
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
 
@@ -30,7 +30,7 @@
       device = "/dev/sda";                 # Define on which hard drive you want to install Grub.
 
       extraEntries = ''
-        
+
         set gfxmode=1680x1050,1400x1050,640x480
 
         menuentry 'Windows Vista (loader)' --class windows --class os {
@@ -72,7 +72,7 @@
     ];
 
   # Select internationalisation properties.
-  i18n = 
+  i18n =
     { consoleFont = "lat9w-16";
       consoleKeyMap = "us";
       defaultLocale = "en_US.UTF-8";
