@@ -8,68 +8,27 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./wireless.nix
-      ./passwd.nix
-      ./touchpad.nix
-      ./packages.nix
-    ];
 
-  boot.initrd.kernelModules =
-    [ # Specify all kernel modules that are necessary for mounting the root
-      # filesystem.
-      "btrfs" # "ata_piix"
+      # Manual per-machine config
+      ./dell-e1505/boot-and-fs.nix
+      ./dell-e1505/wireless.nix
+      ./dell-e1505/touchpad.nix
+
+      # Not tracked, so doesn't need to go in per-machine subdir
+      ./passwd.nix
+
+      # Portable nice to haves
+      ./packages.nix
     ];
 
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
-
-  boot.loader.grub =
-    {
-      enable = true;                       # Enable Grub
-      version = 2;                         # Use the GRUB 2 boot loader
-      device = "/dev/sda";                 # Define on which hard drive you want to install Grub.
-
-      extraEntries = ''
-
-        set gfxmode=1680x1050,1400x1050,640x480
-
-        menuentry 'Windows Vista (loader)' --class windows --class os {
-          insmod part_msdos
-          insmod ntfs
-          set root='hd0,msdos1'
-          # parttool $ {root} hidden-
-          chainloader +1
-        }
-      '';
-    };
 
   networking =
     { hostName = "John-Laptop-Nix";        # Define your hostname.
       # wireless.enable = true;            # Enable Wireless. # use NetworkManager instead
       networkmanager.enable = true;        # Enable NetworkManager
     };
-
-  # Add filesystem entries for each partition that you want to see
-  # mounted at boot time.  This should include at least the root
-  # filesystem.
-
-  fileSystems."/" =                        # where you want to mount the device
-    { device = "/dev/disk/by-label/nixos"; # the device
-      fsType = "btrfs";                    # the type of the partition
-      # options = "data=journal";
-    };
-
-  fileSystems."/winhome/" =                # where you want to mount the device
-    { device = "/dev/disk/by-label/home";  # the device
-      fsType = "ntfs";                     # the type of the partition
-      # options = "data=journal";
-    };
-
-
-  # List swap partitions activated at boot time.
-  swapDevices =
-    [ { device = "/dev/disk/by-label/swap"; }
-    ];
 
   # Select internationalisation properties.
   i18n =
