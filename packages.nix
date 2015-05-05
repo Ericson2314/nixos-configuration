@@ -5,6 +5,12 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.firefox =
+    { #enableGnomeExtensions = true;
+      #enableGoogleTalkPlugin = true;
+      enableAdobeFlash = true;
+    };
+
   environment.systemPackages = with pkgs;
     [ # Shells
       zsh
@@ -14,7 +20,7 @@
       emacs
 
       # Browser
-      firefox
+      firefoxWrapper
 
       # Development
       # (git.override { guiSupport = true; })
