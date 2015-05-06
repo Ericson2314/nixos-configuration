@@ -37,7 +37,11 @@
       termite
 
       # Admin
+      acpi
+      file
       gparted
+      htop
+      tree
 
       # Nix
       nix-repl
