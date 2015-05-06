@@ -51,7 +51,7 @@
   # Enable CUPS to print documents.
   services.printing =
     { enable = true;
-      #drivers = [ pkgs.gutenprint pkgs.hplip ];
+      drivers = [ pkgs.gutenprint pkgs.hplip ];
       #clientConf = ''
       #  ServerName printhost.cs.brown.edu
       #'';
