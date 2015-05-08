@@ -30,6 +30,45 @@ in
       paths = [ texLive texLiveExtra texLiveBeamer ];
     };
 
+    emacsWithPackages = super.emacsWithPackages (with super.emacsPackagesNg; [
+      agda2-mode
+
+      caml
+      tuareg
+
+      haskell-mode
+      structured-haskell-mode
+
+      idris-mode
+      #nix-mode
+      markdown-mode
+      #rust-mode
+
+      #scala-mode
+      #sbt-mode
+
+      #color-theme
+      #color-theme-solarized
+
+      dash
+      #hexrgb
+      #oneonone
+
+      #ace-jump-mode
+      #exec-path-from-shell
+      flycheck
+      #flycheck-pos-tip
+      #gnus
+      self.aspell         # not emacs pkg
+      self.aspellDicts.en # not emacs pkg
+      #magit
+      #projectile
+      #switch-window
+      #smart-mode-line
+      #undo-tree
+      #use-package
+    ]);
+
     #rustcNightly = super.callPackage (projects + "/nixpkgs/pkgs/development/compilers/rustc/nightly.nix") {};
 
     haskellngPackages = super.haskellngPackages.override {

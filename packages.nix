@@ -13,7 +13,7 @@
 
       # Editors
       vim
-      emacs
+      # emacs # in user config, due to customization
 
       # Browser
       firefoxWrapper
