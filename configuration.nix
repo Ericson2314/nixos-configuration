@@ -38,7 +38,6 @@
   # Enable the OpenSSH daemon.
   services.openssh =
     { enable = true;
-      ports = [ 20202 ];
       forwardX11 = true;
       permitRootLogin = "no";
       passwordAuthentication = false;
