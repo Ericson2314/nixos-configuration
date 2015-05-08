@@ -38,6 +38,7 @@
       gparted
       htop
       tree
+      wget
 
       # Nix
       nix-repl
