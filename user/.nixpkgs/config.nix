@@ -69,7 +69,7 @@ in
       #use-package
     ]);
 
-    #rustcNightly = super.callPackage (projects + "/nixpkgs/pkgs/development/compilers/rustc/nightly.nix") {};
+    #rustcNightly = super.callPackage (projectsRoot + "/nixpkgs/pkgs/development/compilers/rustc/nightly.nix") {};
 
     haskellPackages = super.haskellPackages.override {
       overrides = self: super: {
