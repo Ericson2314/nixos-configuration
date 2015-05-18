@@ -15,22 +15,22 @@ let
       verilog-pretty-print = self.callPackage (clashRoot + "verilog/pretty-print") {};
   };
 
-  cncProjects = super: let
+  cncProjects = self: super: let
       cncRoot  = projectsRoot + "cnc/";
     in {
-      petool   = super.callPackage (cncRoot + "petool") {};
-      engine1  = super.callPackage (cncRoot + "engine1") {};
-      engine2  = super.callPackage (cncRoot + "engine2") {};
-      dune2k   = super.callPackage (cncRoot + "dune2k") {};
+      petool   = self.callPackage (cncRoot + "petool") {};
+      engine1  = self.callPackage (cncRoot + "engine1") {};
+      engine2  = self.callPackage (cncRoot + "engine2") {};
+      dune2k   = self.callPackage (cncRoot + "dune2k") {};
   };
 in
 {
   packageOverrides = super: let self = super.pkgs; in {
-    myTexLive = with super; texLiveAggregationFun {
+    myTexLive = with self; texLiveAggregationFun {
       paths = [ texLive texLiveExtra texLiveBeamer ];
     };
 
-    myEmacs = super.emacsWithPackages (with super.emacsPackagesNg; [
+    myEmacs = self.emacsWithPackages (with self.emacsPackagesNg; [
       agda2-mode
 
       caml
@@ -78,6 +78,6 @@ in
       ;
     };
   }
-  #// (cncProjects super)
+  #// (cncProjects self super)
   ;
 }
