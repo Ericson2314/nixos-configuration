@@ -19,8 +19,7 @@
       firefoxWrapper
 
       # Development
-      # (git.override { guiSupport = true; })
-      git
+      (git.override { guiSupport = true; })
 
       # Desktop Env
       dmenu

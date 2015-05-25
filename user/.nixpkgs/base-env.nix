@@ -6,7 +6,6 @@ with (import <nixpkgs> {});
   inherit (haskellPackages) cabal2nix;
 
   inherit meld;
-  inherit gitg;
 
   inherit qemu;
   inherit gdb;
