@@ -18,4 +18,5 @@ with (import <nixpkgs> {});
 
   inherit p7zip;
   inherit unzip;
+  inherit unrar;
 }
