@@ -27,7 +27,7 @@ in
 {
   packageOverrides = super: let self = super.pkgs; in {
     myTexLive = with self; texLiveAggregationFun {
-      paths = [ texLive texLiveExtra texLiveBeamer ];
+      paths = [ texLive texLiveExtra /*texLiveBeamer*/ ];
     };
 
     myEmacs = self.emacsWithPackages (with self.emacsPackagesNg; [
