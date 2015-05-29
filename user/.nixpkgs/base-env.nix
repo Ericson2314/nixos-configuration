@@ -11,7 +11,7 @@ with (import <nixpkgs> {});
   inherit gdb;
 
   inherit ncdu;
-  inherit unison;
+  inherit unison_2_40;
   inherit htop;
 
   inherit xsel;

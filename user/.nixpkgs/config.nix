@@ -69,6 +69,14 @@ in
       #use-package
     ]);
 
+    unison_2_40 = self.stdenv.lib.overrideDerivation self.unison (old: rec {
+      name = "unison-2.40.102";
+      src = self.fetchurl {
+        url = "http://www.seas.upenn.edu/~bcpierce/unison/download/releases/stable/${name}.tar.gz";
+        sha256 = "0m78q5vnsric1virvkmxxx32ipaq0cnj0kbirdbg36395gq94jix";
+      };
+    });
+
     #rustcNightly = super.callPackage (projectsRoot + "/nixpkgs/pkgs/development/compilers/rustc/nightly.nix") {};
 
     haskellPackages = super.haskellPackages.override {
