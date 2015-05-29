@@ -77,7 +77,10 @@ in
       };
     });
 
-    #rustcNightly = super.callPackage (projectsRoot + "/nixpkgs/pkgs/development/compilers/rustc/nightly.nix") {};
+    rustcNightly = self.callPackage ./rustc-nightly.nix {
+      date = "2015-05-28";
+      hash = "0ayslz08v69xaiq0qdgjxz23spcw58fgaaadk1njqif2im1cn7ri";
+    };
 
     haskellPackages = super.haskellPackages.override {
       overrides = self: super: {
