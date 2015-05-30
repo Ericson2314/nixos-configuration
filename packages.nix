@@ -44,6 +44,11 @@
       nix-prefetch-scripts
     ];
 
-  #nix.binaryCaches = builtins.concatLists [ config.nix.binaryCaches.default [ "https://hydra.nixos.org/" "http://hydra.cryp.to" ] ];
-  nix.binaryCaches = [ "http://cache.nixos.org/" "https://hydra.nixos.org/" "http://hydra.cryp.to" ];
+  nix.binaryCaches = [
+    "http://cache.nixos.org/"
+    "https://hydra.nixos.org/"
+
+    "http://hydra.cryp.to"
+    "https://ryantrinkle.com:5443"
+  ];
 }
