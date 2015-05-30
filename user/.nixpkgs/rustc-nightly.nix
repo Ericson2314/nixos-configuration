@@ -63,7 +63,6 @@ stdenv.mkDerivation rec {
       "$cargo/bin/cargo"
     ];
   in ''
-    set -v
     for executable in ${exes}; do
       patchelf --interpreter "${stdenv.glibc}/lib/${stdenv.cc.dynamicLinker}" \
                --set-rpath "${rpath}" \
