@@ -32,6 +32,9 @@
       defaultLocale = "en_US.UTF-8";
     };
 
+  # Set your time zone.
+  time.timeZone = "America/Tijuana";
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
