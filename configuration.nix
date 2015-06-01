@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./mac-pro/hardware-configuration.nix
     ];
 
   # Use the gummiboot efi boot loader.
