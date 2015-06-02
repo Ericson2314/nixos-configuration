@@ -16,9 +16,14 @@
   # mounted at boot time.  This should include at least the root
   # filesystem.
 
-  fileSystems."/" =                        # where you want to mount the device
-    { device = "/dev/disk/by-label/nixos"; # the device
-      fsType = "btrfs";                    # the type of the partition
+  fileSystems."/" =                              # where you want to mount the device
+    { device = "/dev/disk/by-label/NixOS-btrfs"; # the device
+      fsType = "btrfs";                          # the type of the partition
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-label/EFI";
+      fsType = "vfat";
     };
 
   #### List swap partitions activated at boot time.
