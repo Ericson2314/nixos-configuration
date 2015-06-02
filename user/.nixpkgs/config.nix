@@ -30,6 +30,12 @@ in
       paths = [ texLive texLiveExtra /*texLiveBeamer*/ ];
     };
 
+    agda = self.callPackage (projectsRoot + "nixpkgs/pkgs/build-support/agda") {
+      glibcLocales = super.glibcLocales;
+      extension = self : super : { };
+      inherit (super.haskell.packages.ghc784) Agda;
+    };
+
     myEmacs = self.emacsWithPackages (with self.emacsPackagesNg; [
       agda2-mode
 
