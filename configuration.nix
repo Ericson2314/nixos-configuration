@@ -6,9 +6,7 @@
     ./hardware-configuration.nix
 
     # Manual per-machine config
-    ./dell-e1505/boot-and-fs.nix
-    ./dell-e1505/wireless.nix
-    ./dell-e1505/touchpad.nix
+    ./dell-e1505
 
     # Not tracked, so doesn't need to go in per-machine subdir
     ./passwd.nix
