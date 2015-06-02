@@ -8,6 +8,9 @@
     # Manual per-machine config
     ./dell-e1505
 
+    # Moved out cause it is big
+    ./pubkeys.nix
+
     # Not tracked, so doesn't need to go in per-machine subdir
     ./passwd.nix
 
