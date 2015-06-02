@@ -1,0 +1,8 @@
+EDITOR=vim
+#VISUAL=emacs
+
+alias nixpaste="curl -F 'text=<-' http://nixpaste.noip.me"
+alias nix-shell-callPackage="nix-shell -E '(import <nixpkgs> {}).callPackage ./. {}'"
+alias nix-build-callPackage="nix-build -E '(import <nixpkgs> {}).callPackage ./. {}'"
+
+source $HOME/.private-environment
