@@ -1,66 +1,68 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./mac-pro/hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      ./mac-pro/boot-and-fs.nix
-      #./dell-e1505/wireless.nix
-      #./dell-e1505/touchpad.nix
+    # Manual per-machine config
+    ./mac-pro
 
-      # Not tracked, so doesn't need to go in per-machine subdir
-      ./passwd.nix
+    # Moved out cause it is big
+    ./pubkeys.nix
 
-      # Portable nice to haves
-      ./packages.nix
-    ];
+    # Not tracked, so doesn't need to go in per-machine subdir
+    ./passwd.nix
+
+    # Portable nice to haves
+    ./packages.nix
+  ];
 
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
 
-  networking =
-    { hostName = "John-Delphix-Nix";       # Define your hostname.
-      # wireless.enable = true;            # Enable Wireless. # use NetworkManager instead
-      networkmanager.enable = true;        # Enable NetworkManager
-    };
+  networking = {
+    hostName = "John-Delphix-Nix"; # Define your hostname.
+    # wireless.enable = true;     # Enables wireless support via wpa_supplicant.
+    networkmanager.enable = true; # Enable NetworkManager
+  };
 
   # Select internationalisation properties.
-  i18n =
-    { consoleFont = "lat9w-16";
-      consoleKeyMap = "us";
-      defaultLocale = "en_US.UTF-8";
-    };
+  i18n = {
+    consoleFont = "lat9w-16";
+    consoleKeyMap = "us";
+    defaultLocale = "en_US.UTF-8";
+  };
 
   # Set your time zone.
-  time.timeZone = "America/Tijuana";
+  time.timeZone = "America/Los_Angeles";
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh =
-    { enable = true;
-      forwardX11 = true;
-      permitRootLogin = "no";
-      passwordAuthentication = false;
-    };
+  services.openssh = {
+    enable = true;
+    forwardX11 = true;
+    permitRootLogin = "no";
+    passwordAuthentication = false;
+  };
 
   # Enable CUPS to print documents.
-  services.printing =
-    { enable = true;
-      drivers = [ pkgs.gutenprint pkgs.hplip ];
-      #clientConf = ''
-      #  ServerName printhost.cs.brown.edu
-      #'';
-    };
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.gutenprint pkgs.hplip ];
+    #clientConf = ''
+    #  ServerName printhost.cs.brown.edu
+    #'';
+  };
 
   # Enable the X11 windowing system.
-  services.xserver =
-    { enable = true;
-      layout = "us";
-      xkbOptions = "eurosign:e";
-      autorun = true;
-    };
+  services.xserver = {
+    enable = true;
+    layout = "us";
+    xkbOptions = "eurosign:e";
+    autorun = true;
+  };
 
   # Enable the Light Desktop Manager
   services.xserver.displayManager.lightdm.enable = true;
@@ -88,14 +90,15 @@
   # Users
   users.defaultUserShell = "/var/run/current-system/sw/bin/zsh";
   users.mutableUsers = false;
-  users.extraUsers.john =
-    { uid = 1000;
-      createHome = true;
-      home = "/home/john";
-      description = "John Cotton Ericson";
-      extraGroups = [ "john" "networkmanager" "wheel" ];
-      isSystemUser = false;
-      useDefaultShell = true;
-    };
+  users.extraUsers.john = {
+    uid = 1000;
+    createHome = true;
+    home = "/home/john";
+    description = "John Cotton Ericson";
+    extraGroups = [ "john" "networkmanager" "wheel" ];
+    isSystemUser = false;
+    isNormalUser = true;
+    useDefaultShell = true;
+  };
 
 }
