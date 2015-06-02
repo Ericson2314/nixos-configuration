@@ -6,4 +6,6 @@
     ./wireless.nix
     ./touchpad.nix
   ];
+
+  networking.hostName = "John-Laptop-Nix";
 }

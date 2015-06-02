@@ -22,7 +22,6 @@
   nixpkgs.config.allowUnfree = true;
 
   networking = {
-    hostName = "John-Laptop-Nix"; # Define your hostname.
     # wireless.enable = true;     # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true; # Enable NetworkManager
   };
