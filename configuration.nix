@@ -10,18 +10,16 @@
       ./hardware-configuration.nix
     ];
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  # Define on which hard drive you want to install Grub.
-  # boot.loader.grub.device = "/dev/sda";
+  # Use the gummiboot efi boot loader.
+  boot.loader.gummiboot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Select internationalisation properties.
   # i18n = {
-  #   consoleFont = "Lat2-Terminus16";
+  #   consoleFont = "lat9w-16";
   #   consoleKeyMap = "us";
   #   defaultLocale = "en_US.UTF-8";
   # };
