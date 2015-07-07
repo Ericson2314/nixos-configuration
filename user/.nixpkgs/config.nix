@@ -78,8 +78,8 @@ in
     });
 
     rustcNightly = self.callPackage ./rustc-nightly.nix {
-      date = "2015-05-28";
-      hash = "0ayslz08v69xaiq0qdgjxz23spcw58fgaaadk1njqif2im1cn7ri";
+      date = "2015-06-27";
+      hash = "1i4yhpilycrlbrxdyhz68qan2h5m8x136pl4nxsdgbsyzx9vn6a1";
     };
 
     haskellPackages = super.haskellPackages.override {
