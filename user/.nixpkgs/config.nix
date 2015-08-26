@@ -77,11 +77,6 @@ in
       };
     });
 
-    rustcNightly = self.callPackage ./rustc-nightly.nix {
-      date = "2015-06-27";
-      hash = "1i4yhpilycrlbrxdyhz68qan2h5m8x136pl4nxsdgbsyzx9vn6a1";
-    };
-
     haskellPackages = super.haskellPackages.override {
       overrides = self: super: {
       }
@@ -90,5 +85,17 @@ in
     };
   }
   #// (cncProjects self super)
+  // (let fs = self.callPackage ./rust-nightly.nix { };
+  in {
+    rustcNightly = fs.rustc {
+      date = "2015-08-25";
+      hash = "15h84x58fzwx38iqv85g9zq1kzlx8xhrc79c14i27lgm61q7ywdf";
+    };
+
+    cargoNightly = fs.cargo {
+      date = "2015-08-20";
+      hash = "16lb1ximivzp0v1afmv2538w6wvkln0wg0429lpg97n0j5rapi1i";
+    };
+  })
   ;
 }
