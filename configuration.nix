@@ -33,6 +33,18 @@
     defaultLocale = "en_US.UTF-8";
   };
 
+  # Extra Fonts
+  fonts = {
+    #enableFontDir = true;
+    #enableGhostscriptFonts = true;
+    fonts = with pkgs; [
+      corefonts  # Micrsoft free fonts
+      inconsolata  # monospaced
+      ubuntu_font_family  # Ubuntu fonts
+      unifont # some international languages
+    ];
+  };
+
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
