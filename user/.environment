@@ -1,7 +1,7 @@
 EDITOR=vim
 #VISUAL=emacs
 
-alias nixpaste="curl -F 'text=<-' http://nixpaste.noip.me"
+alias nixpaste="curl -F 'text=<-' http://nixpaste.lbr.uno"
 alias nix-shell-callPackage="nix-shell -E '(import <nixpkgs> {}).callPackage ./. {}'"
 alias nix-build-callPackage="nix-build -E '(import <nixpkgs> {}).callPackage ./. {}'"
 
