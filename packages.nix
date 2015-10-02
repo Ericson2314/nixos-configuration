@@ -46,8 +46,9 @@
 
   nix.binaryCaches = [
     "http://cache.nixos.org/"
+  ];
+  nix.trustedBinaryCaches = [
     "https://hydra.nixos.org/"
-
     "http://hydra.cryp.to"
     "https://ryantrinkle.com:5443"
   ];
