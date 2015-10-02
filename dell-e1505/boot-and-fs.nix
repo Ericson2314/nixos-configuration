@@ -2,6 +2,20 @@
 { config, pkgs, ... }:
 
 {
+  imports =
+    [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+    ];
+
+  boot.initrd.availableKernelModules = [
+    "uhci_hcd"
+    "ehci_pci"
+    "ata_piix"
+    "firewire_ohci"
+    "usb_storage"
+    "sd_mod"
+    "sr_mod"
+  ];
+
   boot.initrd.kernelModules = [
     # Specify all kernel modules that are necessary for mounting the root
     # filesystem.
