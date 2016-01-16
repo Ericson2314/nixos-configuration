@@ -2,9 +2,6 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-
     # Manual per-machine config
     ./mac-pro
 
@@ -31,6 +28,18 @@
     consoleFont = "lat9w-16";
     consoleKeyMap = "us";
     defaultLocale = "en_US.UTF-8";
+  };
+
+  # Extra Fonts
+  fonts = {
+    #enableFontDir = true;
+    #enableGhostscriptFonts = true;
+    fonts = with pkgs; [
+      corefonts  # Micrsoft free fonts
+      inconsolata  # monospaced
+      ubuntu_font_family  # Ubuntu fonts
+      unifont # some international languages
+    ];
   };
 
   # Set your time zone.
@@ -99,5 +108,8 @@
     isNormalUser = true;
     useDefaultShell = true;
   };
+
+  # The NixOS release to be compatible with for stateful data such as databases.
+  system.stateVersion = "16.03";
 
 }

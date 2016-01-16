@@ -8,4 +8,6 @@
   ];
 
   networking.hostName = "John-Laptop-Nix";
+
+  nix.maxJobs = 2;
 }
