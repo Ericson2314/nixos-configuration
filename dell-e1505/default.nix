@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../common.nix
     ./boot-and-fs.nix
     ./wireless.nix
     ./touchpad.nix

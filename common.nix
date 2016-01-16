@@ -2,9 +2,6 @@
 
 {
   imports = [
-    # Manual per-machine config
-    ./mac-pro
-
     # Moved out cause it is big
     ./pubkeys.nix
 
