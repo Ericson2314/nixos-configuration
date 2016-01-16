@@ -21,6 +21,7 @@ set autoindent
 set copyindent
 set virtualedit=onemore
 set gdefault
+set ruler
 
 au BufEnter *.arr set syntax=pyret
 au BufEnter *.arr set expandtab
