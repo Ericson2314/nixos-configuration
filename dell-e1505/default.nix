@@ -8,7 +8,7 @@
     ./touchpad.nix
   ];
 
-  networking.hostName = "John-Laptop-Nix";
+  networking.hostName = "John-2006-NixOS";
 
   nix.maxJobs = 2;
 }
