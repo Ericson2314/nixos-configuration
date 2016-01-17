@@ -30,7 +30,7 @@ in
       paths = [ texLive texLiveExtra /*texLiveBeamer*/ ];
     };
 
-    myEmacs = self.emacsWithPackages (with self.emacsPackagesNg; [
+    myEmacs = self.emacsWithPackages (emacsPkgs: with emacsPkgs; [
       agda2-mode
 
       caml
