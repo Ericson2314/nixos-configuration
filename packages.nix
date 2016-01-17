@@ -36,6 +36,7 @@
       file
       gparted
       htop
+      pciutils
       tree
       wget
 
