@@ -15,6 +15,9 @@
   boot.loader.gummiboot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # For Intel Graphics to work, was default of 4.1
+  boot.kernelPackages = pkgs.linuxPackages_4_4;
+
   networking.hostName = "John-2016-NixOS"; # Define your hostname.
 
   environment.systemPackages = with pkgs; [
