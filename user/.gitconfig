@@ -1,0 +1,7 @@
+[user]
+	email = Ericson2314@Yahoo.com
+	name = John Ericson
+[push]
+	default = simple
+[core]
+	excludesfile = /home/john/.gitignore
