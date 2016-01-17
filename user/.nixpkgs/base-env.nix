@@ -3,7 +3,7 @@ with (import <nixpkgs> {});
   inherit gimp;
 
   inherit myEmacs;
-  inherit (haskellPackages) cabal2nix;
+  inherit musescore;
 
   inherit meld;
 
