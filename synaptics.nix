@@ -5,7 +5,9 @@
   services.xserver.synaptics = {
     enable = true;
 
-    accelFactor = "1";
+    minSpeed = "0.1";
+    maxSpeed = "1.5";
+    accelFactor = "0.8";
 
 	tapButtons = false;
 
