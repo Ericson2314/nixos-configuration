@@ -16,4 +16,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "John-2016-NixOS"; # Define your hostname.
+
+  environment.systemPackages = with pkgs; [
+    fbterm # compensate for UHD
+  ];
 }
