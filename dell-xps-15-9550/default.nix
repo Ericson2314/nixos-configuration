@@ -20,4 +20,6 @@
   environment.systemPackages = with pkgs; [
     fbterm # compensate for UHD
   ];
+
+  hardware.nvidiaOptimus.disable = true;
 }
