@@ -9,8 +9,8 @@
     maxSpeed = "15";
     accelFactor = "0.8";
 
-	tapButtons = false;
-	palmDetect = true;
+    tapButtons = false;
+    palmDetect = true;
 
     twoFingerScroll = true;
     vertEdgeScroll = false;
