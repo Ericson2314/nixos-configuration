@@ -5,6 +5,7 @@
     ../common.nix
     ../synaptics.nix
     ../hardware-configuration.nix # Include the results of the hardware scan.
+    ../steam.nix
   ];
 
   #### List swap partitions activated at boot time.
