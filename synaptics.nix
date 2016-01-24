@@ -16,10 +16,12 @@
     vertEdgeScroll = false;
     horizontalScroll = true;
 
-    # "Natural" scrolling
     additionalOptions = ''
+      # "Natural" scrolling
       Option "VertScrollDelta" "-30"
       Option "HorizScrollDelta" "-30"
+
+      Option "EmulateMidButtonTime" "100"
     '';
   };
 }
