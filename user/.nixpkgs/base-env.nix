@@ -1,6 +1,7 @@
 with (import <nixpkgs> {});
 {
   inherit gimp;
+  inherit (gimpPlugins) resynthesizer;
 
   inherit myEmacs;
   inherit musescore;
