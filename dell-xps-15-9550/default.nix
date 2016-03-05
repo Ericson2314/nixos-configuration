@@ -8,11 +8,6 @@
     ../steam.nix
   ];
 
-  #### List swap partitions activated at boot time.
-  ###swapDevices = [
-  ###  { device = "/dev/disk/by-label/Swap"; }
-  ###];
-
   # Use the gummiboot efi boot loader.
   boot.loader.gummiboot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
