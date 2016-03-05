@@ -4,7 +4,7 @@
   imports = [
     ../common.nix
     ../synaptics.nix
-    ../hardware-configuration.nix # Include the results of the hardware scan.
+    ../../hardware-configuration.nix # Include the results of the hardware scan.
     ../steam.nix
   ];
 

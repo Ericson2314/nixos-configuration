@@ -6,7 +6,7 @@
     ./pubkeys.nix
 
     # Not tracked, so doesn't need to go in per-machine subdir
-    ./passwd.nix
+    ../passwd.nix
 
     # Portable nice to haves
     ./packages.nix
