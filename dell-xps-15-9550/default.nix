@@ -3,7 +3,7 @@
 {
   imports = [
     ../common.nix
-    ../synaptics.nix
+    ../libinput.nix
     ../../hardware-configuration.nix # Include the results of the hardware scan.
     ../steam.nix
     ../../nixos-hardware/dell/xps-15-9550.nix # from the nixo-hardware repo
