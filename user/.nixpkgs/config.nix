@@ -91,12 +91,22 @@ in
   in {
     rustcNightly = fs.rustc {
       date = "2015-08-25";
-      hash = "15h84x58fzwx38iqv85g9zq1kzlx8xhrc79c14i27lgm61q7ywdf";
+      hash = "09r5fg6mxlzjsvjrhgjmbw1rv6cm2iwz9wm3mwzayxafir104vm7";
+    };
+
+    rustStdNightly = fs.rust-std {
+      date = "2016-04-09";
+      hash = "0xn8pqs1bakzh6apzrf8nas1yni4nsv90f0qpgb2cjvkjldksz4j";
     };
 
     cargoNightly = fs.cargo {
-      date = "2015-08-20";
-      hash = "16lb1ximivzp0v1afmv2538w6wvkln0wg0429lpg97n0j5rapi1i";
+      date = "2016-04-09";
+      hash = "1y7wlplq1r88fijwg0831p0v1zny2fzmgmkjx8580jv36jh2kvbr";
+    };
+
+    rustNightly = fs.rust {
+      date = "2016-04-09";
+      hash = "07w2fs1c4jwzsdphcr6215py7f3nid8qf920hswfn9l3fy5x9jfz";
     };
   })
   ;

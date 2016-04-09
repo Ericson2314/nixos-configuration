@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchzip, zlib }:
+{ stdenv, lib, fetchzip, zlib, rsync }:
 
 # rustc and cargo nightly binaries
 
@@ -23,26 +23,31 @@ let
       sha256 = hash;
     };
 
+    nativeBuildInputs = [ rsync ];
+
     dontStrip = true;
 
+    unpackPhase = ""; # skip it
+
     installPhase = ''
-      mv ${pname} $out
+      rsync --chmod=u+w -r $src/*/ $out/
     '';
 
     preFixup = if stdenv.isLinux then let
       # it's overkill, but fixup will prune
-      rpath = stdenv.lib.concatStringsSep ":" [
+      rpath = lib.concatStringsSep ":" [
         "$out/lib"
-        (stdenv.lib.makeLibraryPath [ zlib ])
-        ''${stdenv.cc.cc}/lib${stdenv.lib.optionalString stdenv.is64bit "64"}''
+        (lib.makeLibraryPath [ zlib ])
+        ''${stdenv.cc.cc}/lib${lib.optionalString stdenv.is64bit "64"}''
       ];
     in ''
-      for executable in ${stdenv.lib.concatMapStringsSep " " (s: "$out/bin/" + s) exes}; do
-        patchelf --interpreter "${stdenv.glibc}/lib/${stdenv.cc.dynamicLinker}" \
+      for executable in ${lib.concatStringsSep " " exes}; do
+        patchelf \
+          --interpreter "${stdenv.glibc}/lib/${stdenv.cc.dynamicLinker}" \
           --set-rpath "${rpath}" \
-          "$executable"
+          "$out/bin/$executable"
       done
-      for library in $out/lib/*.so $cargo/lib/*.so; do
+      for library in $out/lib/*.so; do
         patchelf --set-rpath "${rpath}" "$library"
       done
     '' else "";
@@ -55,9 +60,21 @@ in rec {
     exes = [ "rustc" "rustdoc" ];
   };
 
+  rust-std = generic {
+    pname = "rust-std";
+    archive = "https://static.rust-lang.org/dist";
+    exes = [ ];
+  };
+
   cargo = generic {
     pname = "cargo";
     archive = "https://static.rust-lang.org/cargo-dist";
     exes = [ "cargo" ];
+  };
+
+  rust = generic {
+    pname = "rust";
+    archive = "https://static.rust-lang.org/dist";
+    exes = [ "rustc" "rustdoc" "cargo" ];
   };
 }
