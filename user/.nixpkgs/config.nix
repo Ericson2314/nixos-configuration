@@ -87,24 +87,24 @@ in
     };
   }
   #// (cncProjects self super)
-  // (let fs = self.callPackage ./rust-nightly.nix { };
+  // (let funs = self.callPackage ./rust-nightly.nix { };
   in {
-    rustcNightly = fs.rustc {
-      date = "2015-08-25";
-      hash = "09r5fg6mxlzjsvjrhgjmbw1rv6cm2iwz9wm3mwzayxafir104vm7";
+    rustcNightly = funs.rustc {
+      date = "2016-04-09";
+      hash = "1dkks3g5r3v6j81hq73c8lmsngqyxjxjibpv799isd0lhxzs1jrr";
     };
 
-    rustStdNightly = fs.rust-std {
+    rustStdNightly = funs.rust-std {
       date = "2016-04-09";
       hash = "0xn8pqs1bakzh6apzrf8nas1yni4nsv90f0qpgb2cjvkjldksz4j";
     };
 
-    cargoNightly = fs.cargo {
+    cargoNightly = funs.cargo {
       date = "2016-04-09";
       hash = "1y7wlplq1r88fijwg0831p0v1zny2fzmgmkjx8580jv36jh2kvbr";
     };
 
-    rustNightly = fs.rust {
+    rustNightly = funs.rust {
       date = "2016-04-09";
       hash = "07w2fs1c4jwzsdphcr6215py7f3nid8qf920hswfn9l3fy5x9jfz";
     };
