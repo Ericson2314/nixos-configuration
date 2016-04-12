@@ -64,12 +64,12 @@ in rec {
 
   rustcWithSysroots = { rustc, sysroots ? [] }: buildEnv {
     name = "combined-sysroots";
-    paths = sysroots;
-    pathsToLink = "/lib";
+    paths = [ rustc ] ++ sysroots;
+    pathsToLink = [ "/lib" "/share" ];
     #buildInputs = [ makeWrapper ];
     # Can't use wrapper script because of https://github.com/rust-lang/rust/issues/31943
     postBuild = ''
-      mkdir $out/bin/
+      mkdir -p $out/bin/
       cp ${rustc}/bin/* $out/bin/
     '';
   };
