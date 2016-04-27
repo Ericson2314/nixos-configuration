@@ -43,7 +43,7 @@
       # Nix
       nix-repl
       nix-prefetch-scripts
-      strategoPackages018.strategoxt
+      #strategoPackages018.strategoxt # It's broken
     ];
 
   nix = {
