@@ -37,11 +37,7 @@ let
 
     preFixup = if stdenv.isLinux then let
       # it's overkill, but fixup will prune
-      rpath = lib.concatStringsSep ":" [
-        "$out/lib"
-        (lib.makeLibraryPath [ zlib ])
-        ''${stdenv.cc.cc}/lib${lib.optionalString stdenv.is64bit "64"}''
-      ];
+      rpath = "$out/lib:" + lib.makeLibraryPath [ zlib stdenv.cc.cc.lib ];
     in ''
       for executable in ${lib.concatStringsSep " " exes}; do
         patchelf \
