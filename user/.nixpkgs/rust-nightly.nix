@@ -45,7 +45,7 @@ let
     in ''
       for executable in ${lib.concatStringsSep " " exes}; do
         patchelf \
-          --interpreter "${stdenv.glibc}/lib/${stdenv.cc.dynamicLinker}" \
+          --interpreter "$(< $NIX_CC/nix-support/dynamic-linker)" \
           --set-rpath "${rpath}" \
           "$out/bin/$executable"
       done
