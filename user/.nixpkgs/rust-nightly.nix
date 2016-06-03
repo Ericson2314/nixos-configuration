@@ -19,24 +19,17 @@ let
     name = "${pname}-${version}";
     version = "nightly-${date}";
     # TODO meta;
-
     outputs = [ "out" "doc" ];
-
     src = fetchzip {
       url = mkUrl { inherit pname archive date system; };
       sha256 = hash;
     };
-
     nativeBuildInputs = [ rsync ];
-
     dontStrip = true;
-
     unpackPhase = ""; # skip it
-
     installPhase = ''
       rsync --chmod=u+w -r $src/*/ $out/
     '';
-
     preFixup = if stdenv.isLinux then let
       # it's overkill, but fixup will prune
       rpath = "$out/lib:" + lib.makeLibraryPath [ zlib stdenv.cc.cc.lib ];
