@@ -20,6 +20,8 @@ let
     version = "nightly-${date}";
     # TODO meta;
 
+    outputs = [ "out" "doc" ];
+
     src = fetchzip {
       url = mkUrl { inherit pname archive date system; };
       sha256 = hash;
