@@ -1,4 +1,4 @@
-# Sane defaults if the synaptics driver is to be used
+# Sane defaults if the libinput driver is to be used
 { config, pkgs, ... }:
 
 {
