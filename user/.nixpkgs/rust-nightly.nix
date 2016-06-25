@@ -1,4 +1,4 @@
-{ stdenv, lib, buildEnv, makeWrapper, runCommand, fetchzip, zlib, rsync }:
+{ stdenv, lib, buildEnv, makeWrapper, runCommand, fetchurl, zlib, rsync }:
 
 # rustc and cargo nightly binaries
 
@@ -13,22 +13,25 @@ let
   mkUrl = { pname, archive, date, system }:
     "${archive}/${date}/${pname}-nightly-${mkTarget system}.tar.gz";
 
+  fetch = args: let
+      url = mkUrl { inherit (args) pname archive date system; };
+      download = builtins.fetchurl (url + ".sha256");
+      contents = builtins.readFile download;
+      sha256 = args.hash or lib.head (lib.strings.splitString " " contents);
+    in fetchurl { inherit url sha256; };
+
   generic = { pname, archive, exes }:
-      { date, hash, system ? stdenv.system }:
+      { date, system ? stdenv.system, ... } @ args:
       stdenv.mkDerivation rec {
     name = "${pname}-${version}";
     version = "nightly-${date}";
     # TODO meta;
     outputs = [ "out" "doc" ];
-    src = fetchzip {
-      url = mkUrl { inherit pname archive date system; };
-      sha256 = hash;
-    };
+    src = fetch (args // { inherit pname archive system; });
     nativeBuildInputs = [ rsync ];
     dontStrip = true;
-    unpackPhase = ""; # skip it
     installPhase = ''
-      rsync --chmod=u+w -r $src/*/ $out/
+      rsync --chmod=u+w -r ./*/ $out/
     '';
     preFixup = if stdenv.isLinux then let
       # it's overkill, but fixup will prune
@@ -65,21 +68,18 @@ in rec {
     '';
   };
 
-  rust-std = { date, hash, system ? stdenv.system }: stdenv.mkDerivation rec {
+  rust-std = { date, system ? stdenv.system, ... } @ args: stdenv.mkDerivation rec {
     # Strip install.sh, etc
     pname = "rust-std";
     version = "nightly-${date}";
     name = "${pname}-${version}-${system}";
-    src = fetchzip {
-      url = mkUrl {
-        archive = "https://static.rust-lang.org/dist";
-        inherit pname date system;
-      };
-      sha256 = hash;
-    };
-    buildCommand= ''
+    src = fetch (args // {
+      inherit pname system;
+      archive = "https://static.rust-lang.org/dist";
+    });
+    installPhase = ''
       mkdir -p $out
-      cp -r "$src"/*/* $out/
+      mv ./*/* $out/
       rm $out/manifest.in
     '';
   };
