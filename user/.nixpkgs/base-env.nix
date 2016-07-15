@@ -3,8 +3,10 @@ with (import <nixpkgs> {});
   inherit gimp;
   inherit (gimpPlugins) resynthesizer;
 
+  inherit hexchat;
+
   inherit myEmacs;
-  inherit musescore;
+  #inherit musescore;
 
   inherit meld;
 

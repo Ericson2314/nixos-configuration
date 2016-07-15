@@ -39,7 +39,7 @@ in
       tuareg
 
       haskell-mode
-      structured-haskell-mode
+      #structured-haskell-mode
 
       idris-mode
       #nix-mode
