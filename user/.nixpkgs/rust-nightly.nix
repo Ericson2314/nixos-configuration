@@ -3,15 +3,17 @@
 # rustc and cargo nightly binaries
 
 let
-  mkTarget = system:
+  convertPlatform = system:
     if      system == "i686-linux"    then "i686-unknown-linux-gnu"
     else if system == "x86_64-linux"  then "x86_64-unknown-linux-gnu"
     else if system == "i686-darwin"   then "i686-apple-darwin"
     else if system == "x86_64-darwin" then "x86_64-apple-darwin"
     else abort "no snapshot to bootstrap for this platform (missing target triple)";
 
+  thisSys = convertPlatform stdenv.system;
+
   mkUrl = { pname, archive, date, system }:
-    "${archive}/${date}/${pname}-nightly-${mkTarget system}.tar.gz";
+    "${archive}/${date}/${pname}-nightly-${system}.tar.gz";
 
   fetch = args: let
       url = mkUrl { inherit (args) pname archive date system; };
@@ -21,7 +23,7 @@ let
     in fetchurl { inherit url sha256; };
 
   generic = { pname, archive, exes }:
-      { date, system ? stdenv.system, ... } @ args:
+      { date, system ? thisSys, ... } @ args:
       stdenv.mkDerivation rec {
     name = "${pname}-${version}";
     version = "nightly-${date}";
@@ -68,7 +70,8 @@ in rec {
     '';
   };
 
-  rust-std = { date, system ? stdenv.system, ... } @ args: stdenv.mkDerivation rec {
+  rust-std = { date, system ? thisSys, ... } @ args:
+      stdenv.mkDerivation rec {
     # Strip install.sh, etc
     pname = "rust-std";
     version = "nightly-${date}";
