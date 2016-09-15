@@ -34,6 +34,7 @@
       # Admin
       acpi
       file
+      gptfdisk
       gparted
       htop
       pciutils
