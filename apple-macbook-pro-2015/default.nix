@@ -18,4 +18,12 @@
   #boot.blacklistedKernelModules = [ "i915" ];
 
   networking.hostName = "John-Galois-NixOS"; # Define your hostname.
+
+  # Hardware config generater currently ignores mountpoints using FUSE
+  fileSystems."/exchange" = {
+    device = "/dev/sda5";
+    fsType = "exfat";
+  };
+
+
 }
