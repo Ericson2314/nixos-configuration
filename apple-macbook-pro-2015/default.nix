@@ -3,6 +3,7 @@
 {
   imports = [
     ../common.nix
+    ../graphical.nix
     ../libinput.nix
     ../yubikey.nix
     ../../hardware-configuration.nix # Include the results of the hardware scan.

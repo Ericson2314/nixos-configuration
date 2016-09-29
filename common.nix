@@ -67,32 +67,6 @@
     #'';
   };
 
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbOptions = "eurosign:e";
-    autorun = true;
-  };
-
-  # Enable the Light Desktop Manager
-  services.xserver.displayManager.lightdm.enable = true;
-
-  # Enable the KDE Desktop Environment.
-  # services.xserver.displayManager.kdm.enable = true;
-  # services.xserver.desktopManager.kde4.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome3.enable = true;
-  # services.xserver.desktopManager.gnome3.default = "gnome3";
-
-  # Enable XMonad
-  services.xserver.windowManager.xmonad.enable = true;
-  services.xserver.windowManager.xmonad.enableContribAndExtras = true;
-  services.xserver.windowManager.default = "xmonad";
-  services.xserver.desktopManager.default = "none";
-
   security.initialRootPassword = "!";
 
   # Helps with rysnc, unison, etc over SSH
@@ -114,5 +88,4 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.03";
-
 }
