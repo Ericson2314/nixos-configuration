@@ -1,51 +1,51 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config.firefox =
-    { #enableGnomeExtensions = true;
-      #enableGoogleTalkPlugin = true;
-      enableAdobeFlash = true;
-    };
+  nixpkgs.config.firefox = {
+    #enableGnomeExtensions = true;
+    #enableGoogleTalkPlugin = true;
+    enableAdobeFlash = true;
+  };
 
-  environment.systemPackages = with pkgs;
-    [ # Shells
-      zsh
+  environment.systemPackages = with pkgs; [
+    # Shells
+    zsh
 
-      # Editors
-      (neovim.override { vimAlias = true; })
-      # emacs # in user config, due to customization
+    # Editors
+    (neovim.override { vimAlias = true; })
+    # emacs # in user config, due to customization
 
-      # Browser
-      firefoxWrapper
+    # Browser
+    firefoxWrapper
 
-      # Development
-      (git.override { guiSupport = true; })
+    # Development
+    (git.override { guiSupport = true; })
 
-      # Desktop Env
-      dmenu
+    # Desktop Env
+    dmenu
 
-      # Bits of Gnome
-      # gnome3.gnome_terminal
-      evince
+    # Bits of Gnome
+    # gnome3.gnome_terminal
+    evince
 
-      # Terminal emulator
-      termite
+    # Terminal emulator
+    termite
 
-      # Admin
-      acpi
-      file
-      gptfdisk
-      gparted
-      htop
-      pciutils
-      tree
-      wget
+    # Admin
+    acpi
+    file
+    gptfdisk
+    gparted
+    htop
+    pciutils
+    tree
+    wget
 
-      # Nix
-      nix-repl
-      nix-prefetch-scripts
-      #strategoPackages018.strategoxt # It's broken
-    ];
+    # Nix
+    nix-repl
+    nix-prefetch-scripts
+    #strategoPackages018.strategoxt # It's broken
+  ];
 
   nix = {
     binaryCaches = [
