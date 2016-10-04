@@ -23,7 +23,7 @@
 
   # Hardware config generater currently ignores mountpoints using FUSE
   fileSystems."/exchange" = {
-    device = "/dev/sda5";
+    device = "/dev/disk/by-partlabel/exchange";
     fsType = "exfat";
   };
 
