@@ -18,6 +18,7 @@
     pciutils
     tree
     wget
+    termite.terminfo
 
     # Nix
     nix-repl
