@@ -9,6 +9,9 @@
     (neovim.override { vimAlias = true; })
     # emacs # in user config, due to customization
 
+    # Development
+    gitAndTools.tig
+
     # Admin
     acpi
     file
