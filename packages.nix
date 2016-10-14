@@ -31,6 +31,7 @@
 
   nix = {
     package = pkgs.nixUnstable;
+    useSandbox = true;
     binaryCaches = [
       "http://cache.nixos.org/"
     ];
