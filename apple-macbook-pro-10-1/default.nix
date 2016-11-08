@@ -11,7 +11,7 @@
   ];
 
   # For Broadcom chip
-  boot.kernelPackages = pkgs.linuxPackages_4_7;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Supposed to get PTYs back, but didn't
   #boot.blacklistedKernelModules = [ "i915" ];
