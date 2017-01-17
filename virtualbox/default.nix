@@ -18,10 +18,10 @@
   users.users.john.extraGroups = [ "vboxsf" ];
 
   nix.nixPath = options.nix.nixPath.default ++ [
-    ("ssh-config-file=${pkgs.writeText "ssh_config" ''
+    ("ssh-config-file=" + pkgs.writeText "ssh_config" ''
        Host github.com
        IdentityFile /etc/ssh/ssh_host_rsa_key
        StrictHostKeyChecking=no
-     ''}")
+     '')
   ];
 }
