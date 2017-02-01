@@ -30,7 +30,8 @@
   ];
 
   nix = {
-    package = pkgs.nixUnstable;
+    # Don't use unstable if there is a schema change!
+    #package = pkgs.nixUnstable;
     useSandbox = true;
     binaryCaches = [
       "http://cache.nixos.org/"
