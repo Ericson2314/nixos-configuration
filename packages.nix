@@ -2,9 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # Shells
-    zsh
-
     # Editors
     (neovim.override { vimAlias = true; })
     # emacs # in user config, due to customization
