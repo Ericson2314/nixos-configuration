@@ -30,5 +30,5 @@ function fish_prompt --description 'Write out the prompt'
 
   printf '%s%s ' "$display_pwd" (__fish_git_prompt)
 
-  printf '\f\r> '
+  printf '\f\r $ '
 end
