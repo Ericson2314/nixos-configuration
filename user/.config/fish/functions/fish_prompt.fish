@@ -11,7 +11,7 @@ function fish_prompt --description 'Write out the prompt'
   end
 
   if not set -q __fish_color_blue
-    set -g __fish_color_blue (set_color -o blue)
+    set -g __fish_color_blue (set_color -o (hostname | md5sum | head -c 6))
   end
 
   #Set the color for the status depending on the value
