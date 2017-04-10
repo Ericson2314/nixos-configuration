@@ -36,8 +36,8 @@
     displayManager.lightdm.enable = true;
 
     # Enable the KDE Desktop Environment.
-    # displayManager.kdm.enable = true;
-    # desktopManager.kde4.enable = true;
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma5.enable = true;
 
     # Enable the GNOME Desktop Environment.
     # displayManager.gdm.enable = true;
