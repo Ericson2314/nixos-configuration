@@ -46,7 +46,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "America/Los_Angeles";
+  time.timeZone = "America/New_York";
 
   # List services that you want to enable:
 
