@@ -28,10 +28,6 @@ in
   allowUnfree = true;
 
   packageOverrides = super: let self = super.pkgs; in {
-    myTexLive = with self; texLiveAggregationFun {
-      paths = [ texLive texLiveExtra /*texLiveBeamer*/ ];
-    };
-
     myEmacs = self.emacsWithPackages (emacsPkgs: with emacsPkgs; [
       agda2-mode
 
