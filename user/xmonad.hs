@@ -6,6 +6,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Config.Gnome
 import XMonad.Layout.NoBorders
 import XMonad.Layout.LayoutModifier
+import XMonad.Layout.ThreeColumns
 
 import qualified Data.Map as M
 
@@ -26,11 +27,11 @@ main = xmonad $ extend defaultConfig -- gnomeConfig
   where extend :: forall w
                .  LayoutClass w Window
                => XConfig w
-               -> XConfig (ModifiedLayout SmartBorder w)
+               -> XConfig (ModifiedLayout SmartBorder (Choose ThreeCol (Choose ThreeCol w)))
         extend self = self
           { modMask            = mod4Mask
           , terminal           = "termite"
-          , layoutHook         = smartBorders (layoutHook self)
+          , layoutHook         = smartBorders $ ThreeColMid 1 (3/100) (1/2) ||| ThreeCol 1 (3/100) (1/2) ||| layoutHook self
           , keys               = myKeys <+> keys self
           --, borderWidth        = 2
           --, normalBorderColor  = "#cccccc"
