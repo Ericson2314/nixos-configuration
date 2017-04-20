@@ -2,15 +2,18 @@
 {-# LANGUAGE FlexibleContexts #-}
 import XMonad
 
+import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Config.Gnome
 import XMonad.Layout.NoBorders
 import XMonad.Layout.LayoutModifier
 import XMonad.Layout.ThreeColumns
+import XMonad.Util.EZConfig         (additionalKeysP)
+import System.Taffybar.Hooks.PagerHints (pagerHints)
 
 import qualified Data.Map as M
 
-myManageHook = composeAll
+myManageHook = manageDocks <+> composeAll
   [ (className =? "Gnome-panel" <&&> title =? "Run Application") --> doCenterFloat
   --, (className =? "Gcr-prompter")                                --> doCenterFloat
   --, (className =? "Xfce4-notifyd"                                -->  doIgnore)
@@ -18,12 +21,13 @@ myManageHook = composeAll
   ]
 
 myKeys (XConfig {XMonad.modMask = modm}) = M.fromList $
-  [ ((modm,               xK_p), spawn "dmenu_run")
-  , ((modm .|. shiftMask, xK_l), spawn "gnome-screensaver-command -l")
+  [ ((modm,               xK_p),   spawn "dmenu_run")
+  , ((modm,               xK_F12), sendMessage ToggleStruts)
+  , ((modm .|. shiftMask, xK_l),   spawn "gnome-screensaver-command -l")
   ]
 
 main :: IO ()
-main = xmonad $ extend defaultConfig -- gnomeConfig
+main = xmonad $ pagerHints $ extend defaultConfig -- gnomeConfig
   where extend :: forall w
                .  LayoutClass w Window
                => XConfig w
