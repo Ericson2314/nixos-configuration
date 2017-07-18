@@ -16,6 +16,7 @@
 
     # Desktop Env
     dmenu
+    taffybar
 
     # Bits of Gnome
     # gnome3.gnome_terminal
@@ -47,6 +48,7 @@
     # Enable XMonad
     windowManager.xmonad.enable = true;
     windowManager.xmonad.enableContribAndExtras = true;
+    windowManager.xmonad.extraPackages = p: with p; [ taffybar ];
     windowManager.default = "xmonad";
     desktopManager.default = "none";
   };
