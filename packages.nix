@@ -32,11 +32,11 @@
     useSandbox = true;
     binaryCaches = [
       "http://cache.nixos.org/"
+      "https://nixcache.reflex-frp.org"
     ];
     trustedBinaryCaches = [
       "https://hydra.nixos.org/"
       "http://hydra.cryp.to"
-      "https://nixcache.reflex-frp.org"
     ];
     binaryCachePublicKeys = [
       "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
