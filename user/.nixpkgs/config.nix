@@ -28,8 +28,28 @@ in
   allowUnfree = true;
 
   packageOverrides = super: let self = super.pkgs; in {
-    myEmacs = self.emacsWithPackages (emacsPkgs: with emacsPkgs; [
+    myEmacs = self.emacsPackagesNg.emacsWithPackages (epkgs: with epkgs; [
       agda2-mode
+
+      (self.emacsPackagesNg.trivialBuild {
+        pname = "nix-docbook-mode";
+        version = "1970-01-01";
+        src = let
+          schemas = self.writeText "schemas.xml" ''
+            <locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+              <documentElement localName="section" typeId="DocBook"/>
+              <documentElement localName="chapter" typeId="DocBook"/>
+              <documentElement localName="article" typeId="DocBook"/>
+              <documentElement localName="book" typeId="DocBook"/>
+              <typeId id="DocBook" uri="${self.docbook5}/xml/rng/docbook/docbookxi.rnc" />
+            </locatingRules>
+          '';
+        in self.writeText "default.el" ''
+          (eval-after-load 'rng-loc
+            '(add-to-list 'rng-schema-locating-files "${schemas}"))
+          (global-set-key (kbd "<C-return>") 'nxml-complete)
+        '';
+      })
 
       caml
       tuareg
