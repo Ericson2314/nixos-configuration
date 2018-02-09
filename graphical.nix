@@ -61,4 +61,11 @@
     { keys = [ 229 ]; events = [ "key" "rep" ]; command = "${pkgs.kbdlight}/bin/kbdlight down"; }
     { keys = [ 230 ]; events = [ "key" "rep" ]; command = "${pkgs.kbdlight}/bin/kbdlight up"; }
   ];
+
+  services.redshift = {
+    enable = true;
+    # New York
+    latitude = "40.7128";
+    longitude = "-74.0060";
+  };
 }
