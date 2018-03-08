@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, options, pkgs, ... }:
 
 {
   imports = [
@@ -11,7 +11,7 @@
   ];
 
   # For Intel Graphics to work, 4.1 is too low, and 4.4 is sufficient
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_4_14;
 
   networking.hostName = "John-2016-NixOS"; # Define your hostname.
 
@@ -20,6 +20,10 @@
   ];
 
   hardware.nvidiaOptimus.disable = true;
+
+  services.xserver.videoDrivers = [
+      "displaylink"
+    ] ++ options.services.xserver.videoDrivers.default;
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
