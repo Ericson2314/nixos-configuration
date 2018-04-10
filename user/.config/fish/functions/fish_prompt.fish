@@ -30,5 +30,12 @@ function fish_prompt --description 'Write out the prompt'
 
   printf '%s%s ' "$display_pwd" (__fish_git_prompt)
 
+  if set -q IN_NIX_SHELL
+    if not set -q __fish_color_red
+      set -g __fish_color_red (set_color -o red)
+    end
+    printf "%s<NIX: $name>%s " "$__fish_color_red" "$__fish_prompt_normal"
+  end
+
   printf '\f\r $ '
 end
