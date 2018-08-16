@@ -5,7 +5,7 @@
   services.xserver.libinput = {
     enable = true;
 
-    accelSpeed = "1.0";
+    #accelSpeed = "0.0";
     accelProfile = "adaptive";
 
     naturalScrolling = true;
