@@ -11,7 +11,7 @@
   ];
 
   # For Intel Graphics to work, 4.1 is too low, and 4.4 is sufficient
-  boot.kernelPackages = pkgs.linuxPackages_4_14;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "John-2016-NixOS"; # Define your hostname.
 
