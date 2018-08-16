@@ -4,15 +4,16 @@
   nixpkgs.config.firefox = {
     #enableGnomeExtensions = true;
     #enableGoogleTalkPlugin = true;
-    enableAdobeFlash = true;
+    #enableAdobeFlash = true;
   };
 
   environment.systemPackages = with pkgs; [
     # Browser
     firefox
+    chromium
 
     # Development
-    (git.override { guiSupport = true; })
+    (gitFull.override { guiSupport = true; })
 
     # Desktop Env
     dmenu
@@ -27,6 +28,7 @@
   ];
 
   sound.enable = true;
+  hardware.pulseaudio.enable = false;
 
   # Enable the X11 windowing system.
   services.xserver = {
@@ -55,6 +57,8 @@
     desktopManager.default = "none";
   };
 
+  services.upower.enable = true;
+
   # Media Keys
   sound.mediaKeys.enable = true;
   services.actkbd.bindings = [
@@ -69,5 +73,6 @@
     # New York
     latitude = "40.7128";
     longitude = "-74.0060";
+    extraOptions = [ "-m randr" ];
   };
 }
