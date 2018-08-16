@@ -9,7 +9,7 @@
     ./touchpad.nix
   ];
 
-  networking.hostName = "John-2006-NixOS";
+  networking.hostName = "john-2006-nixos";
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
