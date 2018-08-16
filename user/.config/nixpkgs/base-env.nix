@@ -1,7 +1,7 @@
 with (import <nixpkgs> {});
 {
   inherit gimp;
-  inherit (gimpPlugins) resynthesizer;
+  #inherit (gimpPlugins) resynthesizer;
 
   inherit hexchat;
 
@@ -14,7 +14,7 @@ with (import <nixpkgs> {});
   inherit gdb;
 
   inherit ncdu;
-  inherit unison_2_40;
+  #inherit unison_2_40;
   inherit htop;
 
   inherit xsel;
@@ -22,4 +22,6 @@ with (import <nixpkgs> {});
   inherit p7zip;
   inherit unzip;
   inherit unrar;
+
+  inherit signal-desktop;
 }
