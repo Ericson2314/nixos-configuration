@@ -21,6 +21,9 @@
 
   hardware.nvidiaOptimus.disable = true;
 
+  nix.maxJobs = 2;
+  nix.buildCores = 8;
+
   services.xserver.videoDrivers = [
       "displaylink"
     ] ++ options.services.xserver.videoDrivers.default;
