@@ -36,6 +36,7 @@
       inconsolata  # monospaced
       ubuntu_font_family  # Ubuntu fonts
       unifont # some international languages
+      source-code-pro
 
       # Adobe Source Han Sans
       sourceHanSansPackages.korean
