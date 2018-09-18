@@ -92,12 +92,11 @@
   # Users
   users.defaultUserShell = "/var/run/current-system/sw/bin/fish";
   users.mutableUsers = false;
-  users.extraUsers.john = {
+  users.extraUsers.jcericson = {
     uid = 1000;
     createHome = true;
-    home = "/home/john";
     description = "John Cotton Ericson";
-    extraGroups = [ "john" "networkmanager" "wheel" ];
+    extraGroups = [ "jcericson" "networkmanager" "wheel" ];
     isSystemUser = false;
     isNormalUser = true;
     useDefaultShell = true;
