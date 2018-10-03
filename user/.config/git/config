@@ -1,5 +1,9 @@
 [user]
 	email = git@JohnEricson.me
 	name = John Ericson
+
 [push]
 	default = simple
+
+[rerere]
+	enabled = true
