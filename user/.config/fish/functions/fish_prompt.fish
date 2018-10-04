@@ -24,8 +24,6 @@ function fish_prompt --description 'Write out the prompt'
 
   printf '%s(%s)%s ' "$__fish_color_status" "$stat" "$__fish_prompt_normal"
 
-  printf '[%s] ' (date "+%H:%M:%S")
-
   printf '%s%s@%s%s ' "$__fish_color_blue" "$USER" "$__fish_prompt_hostname" "$__fish_prompt_normal"
 
   printf '%s%s ' "$display_pwd" (__fish_git_prompt)
