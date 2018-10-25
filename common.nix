@@ -92,7 +92,7 @@
   # Users
   users.defaultUserShell = "/var/run/current-system/sw/bin/fish";
   users.mutableUsers = false;
-  users.extraUsers.jcericson = {
+  users.users.jcericson = {
     uid = 1000;
     createHome = true;
     description = "John Cotton Ericson";
