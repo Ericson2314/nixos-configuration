@@ -12,6 +12,8 @@
     firefox
     chromium
 
+    signal-desktop
+
     # Development
     (gitFull.override { guiSupport = true; })
 
