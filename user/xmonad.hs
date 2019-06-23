@@ -30,7 +30,6 @@ myWorkspaces =
 myKeys (conf @ (XConfig {XMonad.modMask = modm})) = M.fromList $
   [ ((modm,               xK_p),   spawn "dmenu_run")
   , ((modm,               xK_F12), sendMessage ToggleStruts)
-  , ((modm .|. shiftMask, xK_l),   spawn "gnome-screensaver-command -l")
 
   , ((modm, xK_a), spawn "autorandr -c")
   , ((modm, xK_s), spawn "systemctl suspend")
