@@ -24,4 +24,7 @@ with (import <nixpkgs> {});
   inherit unrar;
 
   inherit signal-desktop;
+
+  inherit cabal-install;
+  inherit (haskellPackages) ghcid nix-diff;
 }
