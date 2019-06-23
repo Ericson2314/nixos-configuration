@@ -22,8 +22,8 @@ myManageHook = manageDocks <+> composeAll
   , isFullscreen                                                 --> doFullFloat
   ]
 
-myWorkspaces = [
-	 "0",  "1", "2", "3", "4", "5", "6", "7", "8", "9"
+myWorkspaces =
+  [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
   -- , "10", "11","12","13","14","15","16","17","18","19"
   ]
 
@@ -31,6 +31,11 @@ myKeys (conf @ (XConfig {XMonad.modMask = modm})) = M.fromList $
   [ ((modm,               xK_p),   spawn "dmenu_run")
   , ((modm,               xK_F12), sendMessage ToggleStruts)
   , ((modm .|. shiftMask, xK_l),   spawn "gnome-screensaver-command -l")
+
+  , ((modm, xK_a), spawn "autorandr -c")
+  , ((modm, xK_s), spawn "systemctl suspend")
+  , ((modm, xK_d), spawn "physlock")
+  , ((modm, xK_f), spawn "emacsclient --create-frame")
   ]
   ++
   [ ((m .|. modm, k), windows $ f i) -- Replace 'mod1Mask' with your mod key of choice.
