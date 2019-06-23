@@ -87,6 +87,7 @@
     # New York
     latitude = "40.7128";
     longitude = "-74.0060";
+    temperature.night = 1500;
     extraOptions = [ "-m randr" ];
   };
 }
