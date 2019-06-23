@@ -61,6 +61,18 @@
 
   services.upower.enable = true;
 
+  # no acidental shutdowns.
+  services.logind.lidSwitch = "suspend";
+  services.logind.lidSwitchDocked = "suspend";
+  services.logind.lidSwitchExternalPower = "suspend";
+  services.logind.extraConfig = ''
+    HandlePowerKey=suspend
+  '';
+
+  # locks X and text vtys.
+  services.physlock.enable = true;
+  services.physlock.allowAnyUser = true;
+
   # Media Keys
   sound.mediaKeys.enable = true;
   services.actkbd.bindings = [
