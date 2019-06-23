@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ./emacs.nix
+    ./emacs
+    ./fish
+    ./git
     ./home-manager.nix
     ./graphical.nix
   ];

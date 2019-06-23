@@ -33,7 +33,7 @@
     #structured-haskell-mode
 
     idris-mode
-    #nix-mode
+    nix-mode
     markdown-mode
     #rust-mode
 
@@ -65,7 +65,7 @@
   home.sessionVariables.VISUAL = "emacsclient --create-frame";
 
   home.file.".spacemacs".source = ./.spacemacs;
-  home.file.".emacs.d/spacemacs".source = ../dep/spacemacs;
+  home.file.".emacs.d/spacemacs".source = ../../dep/spacemacs;
   home.file.".emacs.d/init.el".text = ''
     (setq spacemacs-start-directory "~/.emacs.d/spacemacs/")
     (load-file (concat spacemacs-start-directory "init.el"))

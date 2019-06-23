@@ -34,9 +34,6 @@
     # firefox done below
     chromium
 
-    # Development
-    (gitFull.override { guiSupport = true; })
-
     signal-desktop
 
     # Bits of Gnome
