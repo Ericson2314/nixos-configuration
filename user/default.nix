@@ -7,5 +7,6 @@
     ./git
     ./home-manager.nix
     ./graphical.nix
+    ./nvim
   ];
 }
