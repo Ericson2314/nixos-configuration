@@ -9,4 +9,6 @@
     ./graphical.nix
     ./nvim
   ];
+
+  systemd.user.startServices = true;
 }

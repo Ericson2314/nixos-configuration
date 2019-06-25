@@ -4,7 +4,7 @@
   services.emacs.enable = true;
   programs.emacs.enable = true;
   programs.emacs.extraPackages = epkgs: with epkgs; [
-    agda2-mode
+    #agda2-mode
 
     (pkgs.emacsPackagesNg.trivialBuild {
       pname = "nix-docbook-mode";

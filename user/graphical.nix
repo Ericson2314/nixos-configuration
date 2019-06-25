@@ -42,17 +42,27 @@
 
     # Desktop Env
     dmenu
-    #taffybar
   ];
 
-  xsession.windowManager.xmonad = {
+  xsession = {
     enable = true;
-    # TODO: Patch xmonad-contrib to fix
-    # https://github.com/xmonad/xmonad-contrib/issues/280
-    enableContribAndExtras = true;
-    config = ./xmonad.hs;
-    #extraPackages = p: with p; [ taffybar ];
+
+    windowManager.xmonad = {
+      enable = true;
+      # TODO: Patch xmonad-contrib to fix
+      # https://github.com/xmonad/xmonad-contrib/issues/280
+      enableContribAndExtras = true;
+      config = ./xmonad.hs;
+      extraPackages = p: with p; [ taffybar ];
+    };
+    pointerCursor = {
+      name = "Vanilla-DMZ";
+      package = pkgs.vanilla-dmz;
+    };
   };
+
+  services.taffybar.enable = true;
+  xdg.configFile."taffybar/taffybar.hs".source = ./taffybar.hs;
 
   programs.termite = {
     enable = true;
@@ -65,18 +75,14 @@
 
   programs.firefox.enable = true;
 
-  xsession.pointerCursor = {
-    name = "Vanilla-DMZ";
-    package = pkgs.vanilla-dmz;
-  };
-
   services.redshift = {
     enable = true;
-    provider = "geoclue2";
-    # # New York
-    # latitude = "40.7128";
-    # longitude = "-74.0060";
+    provider = "manual";
+    #provider = "geoclue2";
+    # New York
+    latitude = "40.7128";
+    longitude = "-74.0060";
     temperature.night = 1500;
-    extraOptions = [ "-m randr" ];
+    #extraOptions = [ "-m randr" ];
   };
 }

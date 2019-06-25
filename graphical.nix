@@ -30,8 +30,9 @@
     # desktopManager.gnome3.default = "gnome3";
 
     # Enable XMonad
-    windowManager.xmonad.enable = true;
-    windowManager.default = "xmonad";
+    # windowManager.xmonad.enable = true;
+
+    windowManager.default = "none";
     desktopManager.default = "none";
   };
 

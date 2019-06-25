@@ -1,18 +1,17 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE FlexibleContexts #-}
-import XMonad
-
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.ManageHelpers
-import XMonad.Config.Gnome
-import XMonad.Layout.NoBorders
-import XMonad.Layout.LayoutModifier
-import XMonad.Layout.ThreeColumns
-import XMonad.Util.EZConfig         (additionalKeysP)
-import System.Taffybar.Hooks.PagerHints (pagerHints)
-
 import qualified Data.Map as M
-
+import           System.Taffybar.Support.PagerHints (pagerHints)
+import           XMonad
+import           XMonad.Config.Gnome
+import           XMonad.Hooks.EwmhDesktops (ewmh)
+import           XMonad.Hooks.ManageDocks
+import           XMonad.Hooks.ManageDocks
+import           XMonad.Hooks.ManageHelpers
+import           XMonad.Layout.LayoutModifier
+import           XMonad.Layout.NoBorders
+import           XMonad.Layout.ThreeColumns
+import           XMonad.Util.EZConfig (additionalKeysP)
 import qualified XMonad.StackSet as W
 
 myManageHook = manageDocks <+> composeAll
@@ -43,7 +42,14 @@ myKeys (conf @ (XConfig {XMonad.modMask = modm})) = M.fromList $
   ]
 
 main :: IO ()
-main = xmonad $ pagerHints $ extend defaultConfig -- gnomeConfig
+main = xmonad
+       -- docks allows xmonad to handle taffybar
+     $ docks
+       -- ewmh allows taffybar access to the state of xmonad/x11
+     $ ewmh
+       -- pagerHints supplies additional state that is not supplied by ewmh
+     $ pagerHints
+     $ extend defaultConfig -- gnomeConfig
   where extend :: forall w
                .  LayoutClass w Window
                => XConfig w
