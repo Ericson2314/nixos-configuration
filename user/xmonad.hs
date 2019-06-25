@@ -22,8 +22,16 @@ myManageHook = manageDocks <+> composeAll
   ]
 
 myWorkspaces =
-  [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
-  -- , "10", "11","12","13","14","15","16","17","18","19"
+  [ ("1", xK_1)
+  , ("2", xK_2)
+  , ("3", xK_3)
+  , ("4", xK_4)
+  , ("5", xK_5)
+  , ("6", xK_6)
+  , ("7", xK_7)
+  , ("8", xK_8)
+  , ("9", xK_9)
+  , ("0", xK_0)
   ]
 
 myKeys (conf @ (XConfig {XMonad.modMask = modm})) = M.fromList $
@@ -37,7 +45,7 @@ myKeys (conf @ (XConfig {XMonad.modMask = modm})) = M.fromList $
   ]
   ++
   [ ((m .|. modm, k), windows $ f i) -- Replace 'mod1Mask' with your mod key of choice.
-  | (i, k) <- zip myWorkspaces $ [xK_0 .. xK_9]
+  | (i, k) <- myWorkspaces
   , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
   ]
 
@@ -56,7 +64,7 @@ main = xmonad
                -> XConfig (ModifiedLayout SmartBorder (Choose ThreeCol (Choose ThreeCol w)))
         extend self = self
           { modMask            = mod4Mask
-          , workspaces         = myWorkspaces
+          , workspaces         = fst <$> myWorkspaces
           , terminal           = "termite"
           , layoutHook         = smartBorders $ ThreeColMid 1 (3/100) (1/2) ||| ThreeCol 1 (3/100) (1/2) ||| layoutHook self
           , keys               = myKeys <+> keys self
