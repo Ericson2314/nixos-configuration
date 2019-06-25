@@ -7,6 +7,7 @@
     ./git
     ./home-manager.nix
     ./graphical.nix
+    ./nixpkgs
     ./nvim
   ];
 
