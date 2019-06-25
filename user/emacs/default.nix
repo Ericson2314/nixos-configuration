@@ -61,7 +61,7 @@
     #undo-tree
     #use-package
   ];
-  home.sessionVariables.EDITOR = "emacsclient --create-frame --tty";
+  home.sessionVariables.EDITOR = "vim"; #emacsclient --create-frame --tty";
   home.sessionVariables.VISUAL = "emacsclient --create-frame";
 
   home.file.".spacemacs".source = ./.spacemacs;
