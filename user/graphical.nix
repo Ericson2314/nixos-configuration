@@ -71,7 +71,12 @@
   };
 
   xresources.properties = {
-    "*.dpi" = 150;
+    # A nice desktop size
+    #"*.dpi" = 120;
+    # A nice laptop size:
+    #"*.dpi" = 150;
+    # Double pixels:
+    #"*.dpi" = 192;
   };
 
   programs.firefox.enable = true;
