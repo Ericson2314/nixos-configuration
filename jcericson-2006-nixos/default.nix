@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ../common.nix
-    ../graphical.nix
-    ../synaptics.nix
+    ../system/common.nix
+    ../system/graphical.nix
+    ../system/synaptics.nix
     ./wireless.nix
     ./touchpad.nix
   ];

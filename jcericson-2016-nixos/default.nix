@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ../common.nix
-    ../graphical.nix
-    ../libinput.nix
+    ../system/common.nix
+    ../system/graphical.nix
+    ../system/libinput.nix
     ../../hardware-configuration.nix # Include the results of the hardware scan.
-    ../steam.nix
+    ../system/steam.nix
     <nixos-hardware/dell/xps/15-9550> # from the nixos-hardware repo
   ];
 
