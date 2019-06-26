@@ -40,8 +40,7 @@
     #scala-mode
     #sbt-mode
 
-    #color-theme
-    #color-theme-solarized
+    solarized-theme
 
     dash
     #hexrgb
@@ -61,13 +60,9 @@
     #undo-tree
     #use-package
   ];
-  home.sessionVariables.EDITOR = "vim"; #emacsclient --create-frame --tty";
-  home.sessionVariables.VISUAL = "emacsclient --create-frame";
+  #home.sessionVariables.VISUAL = "emacsclient --create-frame --tty";
 
-  home.file.".spacemacs".source = ./.spacemacs;
+  #home.file.".spacemacs".source = ./.spacemacs;
   home.file.".emacs.d/spacemacs".source = ../../dep/spacemacs;
-  home.file.".emacs.d/init.el".text = ''
-    (setq spacemacs-start-directory "~/.emacs.d/spacemacs/")
-    (load-file (concat spacemacs-start-directory "init.el"))
-  '';
+  home.file.".emacs.d/init.el".source = ./init.el;
 }

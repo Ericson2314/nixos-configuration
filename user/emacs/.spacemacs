@@ -31,12 +31,13 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     rust
-     yaml
-     markdown
-     javascript
-     python
      haskell
+     javascript
+     markdown
+     python
+     rust
+     sql
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -46,15 +47,15 @@ values."
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
-     ;; git
-     ;; markdown
+     git
+     markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
+     spell-checking
      ;; syntax-checking
-     ;; version-control
+     version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -132,18 +133,21 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(solarized-dark
+                         solarized-light
+                         spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '()
-   ;; dotspacemacs-default-font '("Source Code Pro"
-   ;;                             :size 13
-   ;;                             :weight normal
-   ;;                             :width normal
-   ;;                             :powerline-scale 1.1)
+   ;;; dotspacemacs-default-font '("Source Code Pro"
+   ;;;                             ;; :size 18
+   ;;;                             :weight normal
+   ;;;                             :width normal
+   ;;;                             :powerline-scale 1.1
+   ;;;                             )
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -316,6 +320,31 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  (define-key evil-normal-state-map "\C-y" 'yank)
+  (define-key evil-insert-state-map "\C-y" 'yank)
+  (define-key evil-visual-state-map "\C-y" 'yank)
+  (define-key evil-normal-state-map "\C-e" 'end-of-line)
+  (define-key evil-insert-state-map "\C-e" 'end-of-line)
+  (define-key evil-normal-state-map "\C-w" 'evil-delete)
+  (define-key evil-insert-state-map "\C-w" 'evil-delete)
+  (define-key evil-normal-state-map "\C-r" 'search-backward)
+  (define-key evil-insert-state-map "\C-r" 'search-backward)
+  (define-key evil-visual-state-map "\C-w" 'evil-delete)
+  (define-key evil-normal-state-map (kbd "S-<left>")
+    (lambda ()
+      (interactive)
+      (evil-visual-char)
+      (backward-char)))
+  (define-key evil-normal-state-map (kbd "S-<right>")
+    (lambda ()
+      (interactive)
+      (evil-visual-char)
+      (forward-char)))
+  (define-key evil-visual-state-map (kbd "S-<left>")
+    #'backward-char)
+  (define-key evil-visual-state-map (kbd "S-<right>")
+    #'forward-char)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -325,10 +354,30 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(agda2-include-dirs
+   (quote
+    ("." "src" "/nix/store/i88kvglvvyq3gw54knw523h8sswzli6l-agda-stdlib-2.4.2.3/share/agda")))
+ '(agda2-program-name "~/.emacs.d/nix-shell-agda")
+ '(custom-safe-themes
+   (quote
+    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "31a01668c84d03862a970c471edbd377b2430868eccf5e8a9aec6831f1a0908d" "1297a022df4228b81bc0436230f211bad168a117282c20ddcba2db8c6a200743" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
+ '(evil-move-beyond-eol t)
+ '(frame-background-mode (quote dark))
+ '(haskell-process-args-cabal-new-repl
+   (quote
+    ("--ghc-option=-ferror-spans" "--ghc-option=-fdiagnostics-color=always")))
+ '(haskell-process-auto-import-loaded-modules t t)
+ '(haskell-process-log t)
+ '(haskell-process-suggest-remove-import-lines t t)
+ '(haskell-process-type (quote cabal-new-repl))
+ '(haskell-process-wrapper-function (quote identity))
+ '(indent-tabs-mode nil)
+ '(inhibit-startup-echo-area-message t)
+ '(inhibit-startup-screen t)
  '(nix-indent-function (quote nix-indent-line))
  '(package-selected-packages
    (quote
-    (string-inflection toml-mode racer pos-tip cargo rust-mode magit buffer-expose yaml-mode mmm-mode markdown-toc gh-md meson-mode web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc coffee-mode nix-mode yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic intero hlint-refactor hindent helm-hoogle haskell-snippets yasnippet company-ghci company-ghc ghc company cmm-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async tuareg markdown-mode idris-mode haskell-mode flycheck))))
+    (yapfify ws-butler volatile-highlights vi-tilde-fringe uuidgen toml-mode smeargle solarized-theme ace-jump-helm-line ace-link ace-window ack adaptive-wrap aggressive-indent anaconda-mode anzu auto-compile auto-dictionary auto-highlight-symbol avy bind-key bind-map cargo clean-aindent-mode cmm-mode coffee-mode column-enforce-mode company company-ghc company-ghci cython-mode dash-functional define-word diff-hl diminish dirtree dumb-jump elisp-slime-nav emmet-mode eval-sexp-fu evil evil-anzu evil-args evil-ediff evil-escape evil-exchange evil-iedit-state evil-indent-plus evil-lisp-state evil-magit evil-matchit evil-mc evil-nerd-commenter evil-numbers evil-search-highlight-persist evil-surround evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar exec-path-from-shell expand-region eyebrowse f fancy-battery fill-column-indicator flx flx-ido flycheck flyspell-correct flyspell-correct-helm fringe-helper gh-md ghc ghub git-commit git-gutter git-gutter+ git-gutter-fringe git-gutter-fringe+ git-link git-messenger git-timemachine gitattributes-mode gitconfig-mode gitignore-mode golden-ratio google-translate goto-chg haml-mode haskell-mode haskell-snippets helm helm-ag helm-core helm-css-scss helm-descbinds helm-flx helm-gitignore helm-hoogle helm-make helm-mode-manager helm-projectile helm-pydoc helm-swoop helm-themes highlight highlight-indentation highlight-numbers highlight-parentheses hindent hl-todo hlint-refactor hungry-delete hy-mode hydra iasm-mode idris-mode iedit indent-guide intero js-doc js2-mode js2-refactor json-mode json-reformat json-snatcher lexbind-mode link-hint linum-relative live-py-mode livid-mode lorem-ipsum macrostep magit magit-gitflow magit-popup markdown-toc meson-mode mmm-mode move-text multiple-cursors neotree nix-mode oneonone open-junk-file org-bullets org-plus-contrib orgit packed paradox parent-mode pcre2el persp-mode pip-requirements popup popwin pos-tip powerline pug-mode py-isort pyenv-mode pytest pythonic pyvenv racer rainbow-delimiters request restart-emacs rust-mode rust-playground s sass-mode sbt-mode scala-mode scala-mode2 scss-mode shm simple-httpd skewer-mode slim-mode smartparens spaceline spinner sql-indent string-inflection tagedit toc-org tuareg undo-tree use-package web-beautify which-key winum with-editor yaml-mode yasnippet))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

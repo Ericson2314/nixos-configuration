@@ -4,11 +4,14 @@
   nixpkgs.config.firefox = {
     #enableGnomeExtensions = true;
     #enableGoogleTalkPlugin = true;
-    #enableAdobeFlash = true;
+    enableAdobeFlash = true;
   };
 
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware = {
+    pulseaudio.enable = false;
+    #bluetooth.enable = true;
+  };
 
   # Enable the X11 windowing system.
   services.xserver = {
@@ -19,6 +22,8 @@
 
     # Enable the Light Desktop Manager
     displayManager.lightdm.enable = true;
+
+    desktopManager.wallpaper.mode = "fill";
 
     # Enable the KDE Desktop Environment.
     # displayManager.sddm.enable = true;
