@@ -354,13 +354,6 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(agda2-include-dirs
-   (quote
-    ("." "src" "/nix/store/i88kvglvvyq3gw54knw523h8sswzli6l-agda-stdlib-2.4.2.3/share/agda")))
- '(agda2-program-name "~/.emacs.d/nix-shell-agda")
- '(custom-safe-themes
-   (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "31a01668c84d03862a970c471edbd377b2430868eccf5e8a9aec6831f1a0908d" "1297a022df4228b81bc0436230f211bad168a117282c20ddcba2db8c6a200743" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(evil-move-beyond-eol t)
  '(frame-background-mode (quote dark))
  '(haskell-process-args-cabal-new-repl
