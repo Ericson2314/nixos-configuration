@@ -14,3 +14,6 @@
 	path = dep/spacemacs
 	url = https://github.com/syl20bnr/spacemacs
 	branch = master
+[submodule "dep/nixpkgs-mozilla"]
+	path = dep/nixpkgs-mozilla
+	url = git@github.com:mozilla/nixpkgs-mozilla.git
