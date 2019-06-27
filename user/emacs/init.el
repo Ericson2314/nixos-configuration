@@ -115,54 +115,6 @@
  )
 (put 'downcase-region 'disabled nil)
 
-(setq sonarpulse-keys '("/home/john/.ssl/Sonarpulse.key"
-                        "/home/john/.ssl/Sonarpulse.cert"))
-
-(defun erc-open-tls-stream-with-certificate (name buffer host service)
-  (open-network-stream name buffer host service
-                       :type 'tls
-                       :client-certificate sonarpulse-keys))
-
-;HACK
-(defun open-gnutls-stream (name buffer host service)
-  (gnutls-negotiate :process (open-network-stream name buffer host service)
-                    :type 'gnutls-x509pki
-                    :hostname host
-                    :keylist `(,sonarpulse-keys)))
-
-
-;(setq tls-program '("openssl s_client -connect %h:%p -no_ssl2 -ign_eof -cert /home/john/.ssl/Sonarpulse.pem"
-;                    "gnutls-cli --priority secure256 --x509certfile ~/.ssl/Sonarpulse.pem -p %p %h"
-;                    "gnutls-cli --priority secure256 -p %p %h"))
-;                                     -CAfile /home/ootput/.private/certs/CAs.pem
-;                               --x509cafile /home/ootput/.private/certs/CAs.pem
-
-(setq erc-autojoin-channels-alist '(("mozilla.com" "#rust-osdev" "#rust-internals" "#cargo")))
-
-(defun erc-freenode ()
-   "Connect to IRC."
-   (interactive)
-   (erc-tls :server "irc.freenode.net" :port 6697
-            :nick "Sonarpulse" :full-name "John Ericson"))
-
-(defun erc-mozilla ()
-   "Connect to IRC."
-   (interactive)
-   (erc :server "irc.mozilla.com" :port 6667
-        :nick "Ericson2314" :full-name "John Ericson"))
-
-; From Emacs Wiki
-(make-variable-buffer-local 'erc-fill-column)
-(add-hook 'window-configuration-change-hook
-          '(lambda ()
-             (save-excursion
-               (walk-windows
-                (lambda (w)
-                  (let ((buffer (window-buffer w)))
-                    (set-buffer buffer)
-                    (when (eq major-mode 'erc-mode)
-                      (setq erc-fill-column (- (window-width w) 2)))))))))
-
 (defun protect-window ()
    "make unsplittable"
    (interactive)
