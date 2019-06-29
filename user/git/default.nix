@@ -4,8 +4,6 @@
   programs.git.enable = true;
   programs.git.ignores = [
     "*~"
-    "cabal.project.local"
-    "dist-newstyle"
   ];
 
   # TODO multiple "insteadOf"

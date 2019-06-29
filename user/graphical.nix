@@ -27,8 +27,6 @@
 
     signal-desktop
 
-    cabal-install
-    haskellPackages.ghcid
     haskellPackages.nix-diff
 
     # browser
