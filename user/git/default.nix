@@ -24,23 +24,23 @@
     };
     "url \"ssh://git@gist.github.com\"" = {
       insteadOf = git://gist.github.com;
-      #insteadOf = https://gist.github.com;
-      #insteadOf = http://gist.github.com;
+      "insteadOf " = https://gist.github.com;
+      "insteadOf  " = http://gist.github.com;
     };
     "url \"ssh://git@github.com\"" = {
       insteadOf = git://github.com;
-      #insteadOf = https://github.com;
-      #insteadOf = http://github.com;
+      "insteadOf " = https://github.com;
+      "insteadOf  " = http://github.com;
     };
     "url \"ssh://git@gitlab.com\"" = {
       insteadOf = git://gitlab.com;
-      #insteadOf = https://gitlab.com;
-      #insteadOf = http://gitlab.com;
+      "insteadOf " = https://gitlab.com;
+      "insteadOf  " = http://gitlab.com;
     };
     "url \"ssh://git@bitbucket.com\"" = {
       insteadOf = git://bitbucket.com;
-      #insteadOf = https://bitbucket.com;
-      #insteadOf = http://bitbucket.com;
+      "insteadOf " = https://bitbucket.com;
+      "insteadOf  " = http://bitbucket.com;
     };
   };
   programs.git.package = pkgs.gitFull.override { guiSupport = true; };
