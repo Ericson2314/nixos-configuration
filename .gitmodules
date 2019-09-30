@@ -17,3 +17,6 @@
 [submodule "dep/nixpkgs-mozilla"]
 	path = dep/nixpkgs-mozilla
 	url = https://github.com/mozilla/nixpkgs-mozilla.git
+[submodule "dep/nixos-hardware"]
+	path = dep/nixos-hardware
+	url = https://github.com/NixOS/nixos-hardware.git
