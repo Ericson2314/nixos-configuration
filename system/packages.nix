@@ -39,5 +39,12 @@
     binaryCachePublicKeys = [
       "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
     ];
+    nixPath = let
+      nixpkgs = builtins.toPath ../dep/nixpkgs;
+    in [
+      ("nixos=" + nixpkgs)
+      ("nixpkgs=" + nixpkgs)
+      ("nixos-hardware=" + builtins.toPath ../dep/nixos-hardware)
+    ];
   };
 }
