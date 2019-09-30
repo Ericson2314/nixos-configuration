@@ -18,7 +18,6 @@
     pciutils
     tree
     wget
-    termite.terminfo
 
     # Nix
     nix-prefetch-scripts

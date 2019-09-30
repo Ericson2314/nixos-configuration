@@ -63,9 +63,13 @@
   services.taffybar.enable = true;
   xdg.configFile."taffybar/taffybar.hs".source = ./taffybar.hs;
 
-  programs.termite = {
+  programs.alacritty = {
     enable = true;
-    scrollbackLines = -1;
+    settings = {
+      scrollback.multiplier = -1;
+      scrollback.faux_multiplier = -1;
+      font.size = 4.5;
+    };
   };
 
   xresources.properties = {
