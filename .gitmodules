@@ -1,7 +1,7 @@
 [submodule "dep/home-manager"]
 	path = dep/home-manager
 	url = https://github.com/rycee/home-manager.git
-	branch = release-19.03
+	branch = master
 [submodule "dep/nixpkgs"]
 	path = dep/nixpkgs
 	url = https://github.com/NixOS/nixpkgs-channels.git
