@@ -32,10 +32,10 @@
       "insteadOf " = https://github.com;
       "insteadOf  " = http://github.com;
     };
-    "url \"ssh://git@gitlab.com\"" = {
-      insteadOf = git://gitlab.com;
-      "insteadOf " = https://gitlab.com;
-      "insteadOf  " = http://gitlab.com;
+    "url \"ssh://git@gitlab.\"" = {
+      insteadOf = git://gitlab.;
+      "insteadOf " = https://gitlab.;
+      "insteadOf  " = http://gitlab.;
     };
     "url \"ssh://git@bitbucket.com\"" = {
       insteadOf = git://bitbucket.com;
