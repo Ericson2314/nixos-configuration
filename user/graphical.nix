@@ -68,7 +68,6 @@
     settings = {
       scrollback.multiplier = -1;
       scrollback.faux_multiplier = -1;
-      font.size = 4.5;
     };
   };
 
