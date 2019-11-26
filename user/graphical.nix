@@ -86,8 +86,8 @@
     enable = true;
     provider = "manual";
     #provider = "geoclue2";
-    # New York
-    latitude = "40.7128";
+    # South of New York, for less seasonal variation
+    latitude = "27";
     longitude = "-74.0060";
     temperature.night = 1500;
     #extraOptions = [ "-m randr" ];
