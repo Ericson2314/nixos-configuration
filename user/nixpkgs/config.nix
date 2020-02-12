@@ -27,6 +27,8 @@ in
 {
   allowUnfree = true;
 
+  android_sdk.accept_license = true;
+
   packageOverrides = super: let self = super.pkgs; in {
     unison_2_40 = self.stdenv.lib.overrideDerivation self.unison (old: rec {
       name = "unison-2.40.102";

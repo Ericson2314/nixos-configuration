@@ -3,6 +3,7 @@
 {
   imports = [
     ../user
+    ../user/graphical.nix
     ../user/work.nix
   ];
 
