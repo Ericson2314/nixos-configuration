@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../common.nix
-    ../../hardware-configuration.nix # Include the results of the hardware scan.
+    ../../system/common.nix
+    ../../../hardware-configuration.nix # Include the results of the hardware scan.
   ];
 
   boot.loader.systemd-boot.enable = true;

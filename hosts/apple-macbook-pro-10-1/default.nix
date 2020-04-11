@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ../common.nix
-    ../graphical.nix
-    ../libinput.nix
-    ../yubikey.nix
-    ../../hardware-configuration.nix # Include the results of the hardware scan.
+    ../../system/common.nix
+    ../../system/graphical.nix
+    ../../system/libinput.nix
+    ../../system/yubikey.nix
+    ../../../hardware-configuration.nix # Include the results of the hardware scan.
     <nixos-hardware/apple/macbook-pro/10-1> # from the nixos-hardware repo
   ];
 
