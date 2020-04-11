@@ -101,4 +101,8 @@
     isNormalUser = true;
     useDefaultShell = true;
   };
+
+  services.ipfs = {
+    enable = true;
+  };
 }
