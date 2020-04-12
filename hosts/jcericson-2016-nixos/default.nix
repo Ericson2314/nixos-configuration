@@ -5,8 +5,8 @@
     ../../system/common.nix
     ../../system/graphical.nix
     ../../system/libinput.nix
+    ../../system/steam.nix
     ../../../hardware-configuration.nix # Include the results of the hardware scan.
-    ../system/steam.nix
     <nixos-hardware/dell/xps/15-9550> # from the nixos-hardware repo
   ];
 
