@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../user
-    ../user/graphical.nix
+    ../../user
+    ../../user/graphical.nix
   ];
 
   xresources.properties = {

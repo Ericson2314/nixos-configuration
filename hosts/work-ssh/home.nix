@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../user
-    ../user/work.nix
+    ../../user
+    ../../user/work.nix
   ];
 
 }
