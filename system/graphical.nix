@@ -9,7 +9,7 @@
 
   sound.enable = true;
   hardware = {
-    pulseaudio.enable = false;
+    pulseaudio.enable = true;
     #bluetooth.enable = true;
   };
 

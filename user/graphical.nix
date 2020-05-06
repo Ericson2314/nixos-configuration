@@ -29,6 +29,8 @@
 
     haskellPackages.nix-diff
 
+    pavucontrol
+
     # browser
     # firefox done below
     chromium
