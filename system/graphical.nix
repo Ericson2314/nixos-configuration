@@ -37,8 +37,7 @@
     # Enable XMonad
     # windowManager.xmonad.enable = true;
 
-    windowManager.default = "none";
-    desktopManager.default = "none";
+    displayManager.defaultSession = "xterm";
   };
 
   services.upower.enable = true;
