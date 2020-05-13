@@ -9,6 +9,7 @@
     ./home-manager.nix
     ./nixpkgs
     ./nvim
+    ./misc-dev.nix
   ];
 
   systemd.user.startServices = true;
