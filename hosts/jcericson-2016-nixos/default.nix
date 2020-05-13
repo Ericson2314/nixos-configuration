@@ -15,6 +15,8 @@
 
   networking.hostName = "jcericson-2016-nixos"; # Define your hostname.
 
+  networking.hostId = "a22fc14c";
+
   environment.systemPackages = with pkgs; [
     fbterm # compensate for UHD
   ];
