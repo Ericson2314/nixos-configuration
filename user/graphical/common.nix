@@ -45,41 +45,12 @@
     dmenu
   ];
 
-  xsession = {
-    enable = true;
-
-    windowManager.xmonad = {
-      enable = true;
-      # TODO: Patch xmonad-contrib to fix
-      # https://github.com/xmonad/xmonad-contrib/issues/280
-      enableContribAndExtras = true;
-      config = ./xmonad.hs;
-      #extraPackages = p: with p; [ taffybar ];
-    };
-    pointerCursor = {
-      name = "Vanilla-DMZ";
-      package = pkgs.vanilla-dmz;
-    };
-  };
-
-  #services.taffybar.enable = true;
-  xdg.configFile."taffybar/taffybar.hs".source = ./taffybar.hs;
-
   programs.alacritty = {
     enable = true;
     settings = {
       scrollback.multiplier = -1;
       scrollback.faux_multiplier = -1;
     };
-  };
-
-  xresources.properties = {
-    # A nice desktop size
-    #"*.dpi" = 120;
-    # A nice laptop size:
-    #"*.dpi" = 150;
-    # Double pixels:
-    #"*.dpi" = 192;
   };
 
   programs.firefox.enable = true;
@@ -91,6 +62,7 @@
     # South of New York, for less seasonal variation
     latitude = "27";
     longitude = "-74.0060";
+    #longitude = "-122.4194"; # San Francisco
     temperature.night = 1500;
     #extraOptions = [ "-m randr" ];
   };
