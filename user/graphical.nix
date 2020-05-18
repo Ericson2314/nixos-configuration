@@ -54,7 +54,7 @@
       # https://github.com/xmonad/xmonad-contrib/issues/280
       enableContribAndExtras = true;
       config = ./xmonad.hs;
-      extraPackages = p: with p; [ taffybar ];
+      #extraPackages = p: with p; [ taffybar ];
     };
     pointerCursor = {
       name = "Vanilla-DMZ";
@@ -62,7 +62,7 @@
     };
   };
 
-  services.taffybar.enable = true;
+  #services.taffybar.enable = true;
   xdg.configFile."taffybar/taffybar.hs".source = ./taffybar.hs;
 
   programs.alacritty = {
