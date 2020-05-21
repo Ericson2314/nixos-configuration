@@ -3,7 +3,7 @@
 {
   imports = [
     ../../system/common.nix
-    ../../system/graphical.nix
+    ../../system/graphical/x.nix
     ../../system/libinput.nix
     ../../../hardware-configuration.nix # Include the results of the hardware scan.
     <nixos-hardware/dell/xps/15-9550> # from the nixos-hardware repo

@@ -3,7 +3,7 @@
 {
   imports = [
     ../../system/common.nix
-    ../../system/graphical.nix
+    ../../system/graphical/x.nix
     ../../system/synaptics.nix
     ./wireless.nix
     ./touchpad.nix
