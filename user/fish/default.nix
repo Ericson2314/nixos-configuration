@@ -3,7 +3,7 @@
 {
   programs.fish.enable = true;
   programs.fish.package = pkgs.fish.overrideAttrs (old: {
-    patches = old.patches ++ [
+    patches = old.patches or [] ++ [
       # https://github.com/fish-shell/fish-shell/pull/5637 is merged but not
       # yet released. Need this for sane behavior on macOS.
       (pkgs.fetchpatch {
