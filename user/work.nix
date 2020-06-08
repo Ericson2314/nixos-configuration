@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  programs.git.userEmail = "John.Ericson@Obsidian.Systems";
+  # programs.git.userEmail = "TBD :)";
 }

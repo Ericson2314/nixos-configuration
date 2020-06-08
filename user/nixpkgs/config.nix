@@ -1,5 +1,5 @@
 let
-  projectsRoot = "/home/jcericson/Code/git/";
+  projectsRoot = "/home/klgfollett/Code/git/";
 
   clashProjects = self: super: let
       clashRoot            = projectsRoot + "clash/";

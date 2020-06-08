@@ -106,11 +106,11 @@
   # Users
   users.defaultUserShell = "/var/run/current-system/sw/bin/fish";
   users.mutableUsers = false;
-  users.users.jcericson = {
+  users.users.klgfollett = {
     uid = 1000;
     createHome = true;
-    description = "John Cotton Ericson";
-    extraGroups = [ "jcericson" "networkmanager" "wheel" ];
+    description = "Kate Lois Galagate Follett";
+    extraGroups = [ "klgfollett" "networkmanager" "wheel" ];
     isSystemUser = false;
     isNormalUser = true;
     useDefaultShell = true;

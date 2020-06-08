@@ -15,7 +15,7 @@
     git
   ];
 
-  users.users.jcericson.extraGroups = [ "vboxsf" ];
+  users.users.klgfollett.extraGroups = [ "vboxsf" ];
 
   nix.nixPath = options.nix.nixPath.default ++ [
     ("ssh-config-file=" + pkgs.writeText "ssh_config" ''

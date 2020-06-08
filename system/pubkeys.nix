@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  users.extraUsers.jcericson = {
+  users.extraUsers.klgfollett = {
     openssh.authorizedKeys.keys = [
     ];
   };
