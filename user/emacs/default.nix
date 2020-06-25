@@ -71,4 +71,5 @@ in {
   home.file.".emacs.d/init.el".source = ./init.el;
 } // lib.optionalAttrs (!isDarwin) {
   services.emacs.enable = true;
+  services.emacs.socketActivation.enable = true;
 }
