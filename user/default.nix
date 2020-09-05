@@ -3,6 +3,7 @@
 {
   imports = [
     ./emacs
+    ./bash
     ./fish
     ./git
     ./haskell.nix
