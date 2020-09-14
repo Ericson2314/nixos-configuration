@@ -10,9 +10,6 @@
     <nixos-hardware/dell/xps/15-9550> # from the nixos-hardware repo
   ];
 
-  # For Intel Graphics to work, 4.1 is too low, and 4.4 is sufficient
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   networking.hostName = "jcericson-2016-nixos"; # Define your hostname.
 
   networking.hostId = "a22fc14c";
