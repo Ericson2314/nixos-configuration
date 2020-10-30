@@ -94,8 +94,6 @@
     #'';
   };
 
-  security.initialRootPassword = "!";
-
   # Extra shells allowed as login shells. Also helps with rysnc,
   # unison, etc over SSH
   programs.fish.enable = true;
@@ -106,6 +104,9 @@
   # Users
   users.defaultUserShell = "/var/run/current-system/sw/bin/fish";
   users.mutableUsers = false;
+  users.users.root = {
+    hashedPassword = null;
+  };
   users.users.jcericson = {
     uid = 1000;
     createHome = true;
