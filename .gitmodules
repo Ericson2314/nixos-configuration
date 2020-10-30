@@ -4,7 +4,7 @@
 	branch = release-20.09
 [submodule "dep/nixpkgs"]
 	path = dep/nixpkgs
-	url = https://github.com/NixOS/nixpkgs-channels.git
+	url = https://github.com/NixOS/nixpkgs.git
 	branch = nixos-20.09
 [submodule "dep/obelisk"]
 	path = dep/obelisk
