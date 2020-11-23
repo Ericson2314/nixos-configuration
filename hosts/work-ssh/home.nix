@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -6,4 +6,7 @@
     ../../user/work.nix
   ];
 
+  home.packages = with pkgs; [
+    tig
+  ];
 }
