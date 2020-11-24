@@ -6,7 +6,7 @@
     ../../system/graphical/x.nix
     ../../system/graphical/nvidia-offload.nix
     ../../system/libinput.nix
-    ../../system/steam.nix
+    ../../system/video-games.nix
     ../../../hardware-configuration.nix # Include the results of the hardware scan.
     <nixos-hardware/dell/xps/15-9550> # from the nixos-hardware repo
   ];
