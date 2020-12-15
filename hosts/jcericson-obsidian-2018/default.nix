@@ -14,6 +14,9 @@
   networking = {
     hostName = "jcericson-obsidian-2018"; # Define your hostname.
     hostId = "2a5d5725";
+
+    #interfaces.wlp2s0.useDHCP = true;
+    #interfaces.enp0s20f0u4u2.useDHCP = true;
   };
 
   environment.systemPackages = with pkgs; [
