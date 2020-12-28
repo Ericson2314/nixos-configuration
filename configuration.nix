@@ -28,6 +28,7 @@
   networking.hostName = "carabao"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Enable NetworkManager
+  networking.hostId = "a22d83ab"; # For ZFS
 
   # Set your time zone.
   time.timeZone = "America/New_York";
