@@ -10,7 +10,7 @@
   programs.git.userName = "Kate Follett";
 
   # Need to override on work machines
-  programs.git.userEmail = lib.mkDefault "Follett.Katie@gmail.com";
+  programs.git.userEmail = lib.mkDefault "git@klgf.dev";
 
   programs.git.iniContent = {
     "push" = {
