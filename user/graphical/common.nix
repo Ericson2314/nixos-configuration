@@ -55,15 +55,15 @@
 
   programs.firefox.enable = true;
 
-  services.redshift = {
-    enable = true;
-    provider = "manual";
-    #provider = "geoclue2";
-    # South of New York, for less seasonal variation
-    latitude = "27";
-    longitude = "-74.0060";
-    #longitude = "-122.4194"; # San Francisco
-    temperature.night = 1500;
-    #extraOptions = [ "-m randr" ];
-  };
+  # services.redshift = {
+  #   enable = true;
+  #   provider = "manual";
+  #   #provider = "geoclue2";
+  #   # South of New York, for less seasonal variation
+  #   latitude = "27";
+  #   longitude = "-74.0060";
+  #   #longitude = "-122.4194"; # San Francisco
+  #   temperature.night = 1500;
+  #   #extraOptions = [ "-m randr" ];
+  # };
 }

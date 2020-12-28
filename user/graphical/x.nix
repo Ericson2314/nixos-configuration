@@ -6,7 +6,7 @@
   ];
 
   xsession = {
-    enable = true;
+    enable = false;
 
     windowManager.xmonad = {
       enable = true;
