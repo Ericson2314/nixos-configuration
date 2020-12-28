@@ -14,6 +14,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Open the encrypted partition so the filesystems inside can be mounted.
+  boot.initrd.luks.devices = {
+    "carabao-luksroot" = {
+      device = "/dev/disk/by-partuuid/de841346-8bf0-4229-aa48-3a3f3d77199b";
+      # We don't use LVM (Linux Volume Manager) and so shouldn't wait for it.
+      preLVM = true;
+      # This is good for SSD performance.
+      allowDiscards = true;
+    };
+  };
+
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
