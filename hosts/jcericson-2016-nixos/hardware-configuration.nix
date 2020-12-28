@@ -13,12 +13,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  boot.initrd.luks.devices."luksroot" = {
-    device = "/dev/disk/by-uuid/ae41d6e7-5a97-4c3e-9f63-71f297bdc0fe";
-    preLVM = true;
-    allowDiscards = true;
-  };
-
   fileSystems."/" = {
     #device = "/dev/disk/by-uuid/e0927b84-e935-4d66-bc0d-8893babb3db1";
     #fsType = "btrfs";

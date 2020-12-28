@@ -17,6 +17,13 @@
     hostId = "a22fc14c";
   };
 
+  # The luk partitions isn't autodetected
+  boot.initrd.luks.devices."luksroot" = {
+    device = "/dev/disk/by-uuid/ae41d6e7-5a97-4c3e-9f63-71f297bdc0fe";
+    preLVM = true;
+    allowDiscards = true;
+  };
+
   environment.systemPackages = with pkgs; [
     fbterm # compensate for UHD
   ];
