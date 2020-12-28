@@ -44,6 +44,7 @@
       ("nixos=" + nixpkgs)
       ("nixpkgs=" + nixpkgs)
       ("nixos-hardware=" + builtins.toPath ../dep/nixos-hardware)
+      "nixos-config=/etc/nixos/configuration.nix"
     ];
   };
 }
