@@ -13,8 +13,12 @@
     ../../system/libinput.nix
     ../../system/video-games.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    <nixos-hardware/dell/xps/15-9550> # from the nixos-hardware repo
+    <nixos-hardware/dell/xps/15-9500> # from the nixos-hardware repo
   ];
+
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Open the encrypted partition so the filesystems inside can be mounted.
   boot.initrd.luks.devices = {
