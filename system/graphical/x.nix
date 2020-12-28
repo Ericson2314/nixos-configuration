@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  import = [
+  imports = [
     ./common.nix
   ];
 
@@ -16,6 +16,11 @@
     displayManager.lightdm.enable = true;
 
     desktopManager.wallpaper.mode = "fill";
+
+    # Needed by home manager, workaround for
+    # https://github.com/NixOS/nixpkgs/issues/70142
+    # https://github.com/nix-community/home-manager/issues/1116
+    desktopManager.xterm.enable = true;
 
     # Enable the KDE Desktop Environment.
     # displayManager.sddm.enable = true;

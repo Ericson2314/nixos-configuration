@@ -4,37 +4,37 @@
   imports = [
     ../../system/common.nix
     ../../system/graphical/x.nix
+    ../../system/graphical/nvidia-offload.nix
     ../../system/libinput.nix
+    ../../system/video-games.nix
     ../../../hardware-configuration.nix # Include the results of the hardware scan.
     <nixos-hardware/dell/xps/15-9550> # from the nixos-hardware repo
   ];
 
-  # For Intel Graphics to work, 4.1 is too low, and 4.4 is sufficient
-  boot.kernelPackages = pkgs.linuxPackages_4_19;
+  networking = {
+    hostName = "jcericson-obsidian-2018"; # Define your hostname.
+    hostId = "2a5d5725";
 
-  networking.hostName = "jcericson-obsidian-2018"; # Define your hostname.
-  networking.hostId = "2a5d5725";
+    #interfaces.wlp2s0.useDHCP = true;
+    #interfaces.enp0s20f0u4u2.useDHCP = true;
+  };
 
   environment.systemPackages = with pkgs; [
     fbterm # compensate for UHD
   ];
 
-  #hardware.nvidiaOptimus.disable = true;
 
-  virtualisation.virtualbox.host.enable = true;
-  #virtualisation.docker.enable = true;
-  users.groups.docker.members = [ "jcericson" ];
+  hardware.nvidia.prime = {
+    # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
+    nvidiaBusId = "PCI:1:0:0";
 
-  services.xserver.videoDrivers = [
-      "intel"
-      #"displaylink"
-    ]; #++ options.services.xserver.videoDrivers.default;
-
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
+    intelBusId = "PCI:0:2:0";
   };
+
+  #virtualisation.virtualbox.host.enable = true;
+  ##virtualisation.docker.enable = true;
+  #users.groups.docker.members = [ "jcericson" ];
 
   #networking.firewall.allowedUDPPortRanges = [
   #  { from = 6112; to = 6119; }

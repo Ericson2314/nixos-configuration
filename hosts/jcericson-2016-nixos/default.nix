@@ -4,31 +4,33 @@
   imports = [
     ../../system/common.nix
     ../../system/graphical/x.nix
+    ../../system/graphical/nvidia-offload.nix
     ../../system/libinput.nix
-    ../../system/steam.nix
+    ../../system/video-games.nix
     ../../../hardware-configuration.nix # Include the results of the hardware scan.
     <nixos-hardware/dell/xps/15-9550> # from the nixos-hardware repo
   ];
 
-  # For Intel Graphics to work, 4.1 is too low, and 4.4 is sufficient
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  networking = {
+    hostName = "jcericson-2016-nixos"; # Define your hostname.
 
-  networking.hostName = "jcericson-2016-nixos"; # Define your hostname.
-
-  networking.hostId = "a22fc14c";
+    hostId = "a22fc14c";
+  };
 
   environment.systemPackages = with pkgs; [
     fbterm # compensate for UHD
   ];
 
-  hardware.nvidiaOptimus.disable = true;
-
   nix.maxJobs = 2;
   nix.buildCores = 8;
 
-  services.xserver.videoDrivers = [
-      "displaylink"
-    ] ++ options.services.xserver.videoDrivers.default;
+  hardware.nvidia.prime = {
+    # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
+    nvidiaBusId = "PCI:1:0:0";
+
+    # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
+    intelBusId = "PCI:0:2:0";
+  };
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database

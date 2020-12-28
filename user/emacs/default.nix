@@ -69,6 +69,11 @@ in {
   #home.file.".spacemacs".source = ./.spacemacs;
   home.file.".emacs.d/spacemacs".source = ../../dep/spacemacs;
   home.file.".emacs.d/init.el".source = ./init.el;
+
 } // lib.optionalAttrs (!isDarwin) {
-  services.emacs.enable = true;
+
+  services.emacs = {
+    enable = true;
+    socketActivation.enable = true;
+  };
 }

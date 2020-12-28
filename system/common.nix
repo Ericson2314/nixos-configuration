@@ -24,8 +24,6 @@
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.vboxnet0.useDHCP = true;
-  networking.interfaces.wlp2s0.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -94,8 +92,6 @@
     #'';
   };
 
-  security.initialRootPassword = "!";
-
   # Extra shells allowed as login shells. Also helps with rysnc,
   # unison, etc over SSH
   programs.fish.enable = true;
@@ -106,6 +102,9 @@
   # Users
   users.defaultUserShell = "/var/run/current-system/sw/bin/fish";
   users.mutableUsers = false;
+  users.users.root = {
+    hashedPassword = null;
+  };
   users.users.klgfollett = {
     uid = 1000;
     createHome = true;
@@ -117,6 +116,7 @@
   };
 
   services.ipfs = {
+    package = pkgs.ipfs_latest;
     enable = true;
   };
   networking.firewall.allowedTCPPorts = [ 4001 ];

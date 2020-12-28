@@ -4,6 +4,7 @@
   imports = [
     ../../user
     ../../user/graphical/x.nix
+    ../../user/video-games.nix
   ];
 
   xresources.properties = {
