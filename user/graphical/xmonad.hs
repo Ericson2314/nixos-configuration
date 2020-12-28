@@ -1,7 +1,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE FlexibleContexts #-}
 import qualified Data.Map as M
-import           System.Taffybar.Support.PagerHints (pagerHints)
+-- import           System.Taffybar.Support.PagerHints (pagerHints)
 import           XMonad
 import           XMonad.Config.Gnome
 import           XMonad.Hooks.EwmhDesktops (ewmh)
@@ -55,8 +55,8 @@ main = xmonad
      $ docks
        -- ewmh allows taffybar access to the state of xmonad/x11
      $ ewmh
-       -- pagerHints supplies additional state that is not supplied by ewmh
-     $ pagerHints
+     --  -- pagerHints supplies additional state that is not supplied by ewmh
+     -- $ pagerHints
      $ extend defaultConfig -- gnomeConfig
   where extend :: forall w
                .  LayoutClass w Window
