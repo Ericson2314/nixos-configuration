@@ -9,11 +9,12 @@
     ./passwd.nix
     ../../system/common.nix
     ../../system/graphical/x.nix
-    ../../system/graphical/nvidia-offload.nix
     ../../system/libinput.nix
     ../../system/video-games.nix
-    ./hardware-configuration.nix # Include the results of the hardware scan.
-    <nixos-hardware/dell/xps/15-9500> # from the nixos-hardware repo
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    # from the nixos-hardware repo
+    <nixos-hardware/dell/xps/15-9500/nvidia>
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -34,14 +35,6 @@
   networking = {
     hostName = "carabao"; # Define your hostname.
     hostId = "a22d83ab"; # For ZFS
-  };
-
-  hardware.nvidia.prime = {
-    # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
-    nvidiaBusId = "PCI:1:0:0";
-
-    # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
-    intelBusId = "PCI:0:2:0";
   };
 
   # This value determines the NixOS release from which the default
