@@ -18,6 +18,13 @@
     #interfaces.enp0s20f0u4u2.useDHCP = true;
   };
 
+  # The luk partitions isn't autodetected
+  boot.initrd.luks.devices."luksroot" = {
+    device = "/dev/disk/by-partuuid/13608ae1-f65b-449b-8e6e-67e2dc7b2ffd";
+    preLVM = true;
+    allowDiscards = true;
+  };
+
   environment.systemPackages = with pkgs; [
     fbterm # compensate for UHD
   ];
