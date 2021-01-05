@@ -23,10 +23,6 @@
     allowDiscards = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    fbterm # compensate for UHD
-  ];
-
   nix.maxJobs = 2;
   nix.buildCores = 8;
 

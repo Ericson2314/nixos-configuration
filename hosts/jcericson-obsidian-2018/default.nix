@@ -25,10 +25,6 @@
     allowDiscards = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    fbterm # compensate for UHD
-  ];
-
   #virtualisation.virtualbox.host.enable = true;
   ##virtualisation.docker.enable = true;
   #users.groups.docker.members = [ "jcericson" ];
