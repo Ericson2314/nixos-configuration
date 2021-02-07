@@ -10,7 +10,7 @@ in {
   programs.emacs.extraPackages = epkgs: with epkgs; [
     #agda2-mode
 
-    (pkgs.emacsPackagesNg.trivialBuild {
+    (trivialBuild {
       pname = "nix-docbook-mode";
       version = "1970-01-01";
       src = let
@@ -35,6 +35,14 @@ in {
 
     haskell-mode
     #structured-haskell-mode
+
+    # Workaround until the first commit of
+    # https://github.com/NixOS/nixpkgs/pull/108507 reaches stable.
+    (epkgs.ott-mode or trivialBuild {
+      pname = "ott-mod";
+      inherit (pkgs.ott) src version;
+      postUnpack = "mv $sourceRoot/emacs/ott-mode.el $sourceRoot";
+    })
 
     idris-mode
     nix-mode
