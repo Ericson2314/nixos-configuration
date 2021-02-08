@@ -36,13 +36,7 @@ in {
     haskell-mode
     #structured-haskell-mode
 
-    # Workaround until the first commit of
-    # https://github.com/NixOS/nixpkgs/pull/108507 reaches stable.
-    (epkgs.ott-mode or trivialBuild {
-      pname = "ott-mod";
-      inherit (pkgs.ott) src version;
-      postUnpack = "mv $sourceRoot/emacs/ott-mode.el $sourceRoot";
-    })
+    ott-mode
 
     idris-mode
     nix-mode
