@@ -118,4 +118,5 @@
     enable = true;
   };
   networking.firewall.allowedTCPPorts = [ 4001 ];
+  networking.firewall.allowedUDPPorts = [ 4001 ];
 }
