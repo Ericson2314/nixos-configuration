@@ -10,6 +10,8 @@
 
     #musescore
 
+    vscode
+
     meld
 
     qemu
