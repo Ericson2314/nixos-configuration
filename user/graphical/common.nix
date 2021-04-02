@@ -25,6 +25,7 @@
     unzip
     unrar
 
+    element-desktop
     signal-desktop
 
     haskellPackages.nix-diff
