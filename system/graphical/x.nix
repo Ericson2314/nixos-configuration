@@ -29,7 +29,6 @@
     # Enable the GNOME Desktop Environment.
     # displayManager.gdm.enable = true;
     # desktopManager.gnome3.enable = true;
-    # desktopManager.gnome3.default = "gnome3";
 
     # Enable XMonad
     # windowManager.xmonad.enable = true;
