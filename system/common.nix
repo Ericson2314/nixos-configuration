@@ -117,7 +117,7 @@
   };
 
   services.ipfs = {
-    package = pkgs.ipfs_latest;
+    #package = pkgs.ipfs_latest;
     enable = true;
   };
   networking.firewall.allowedTCPPorts = [ 4001 ];

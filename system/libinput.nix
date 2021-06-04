@@ -5,11 +5,13 @@
   services.xserver.libinput = {
     enable = true;
 
-    #accelSpeed = "0.0";
-    accelProfile = "adaptive";
+    touchpad = {
+      #accelSpeed = "0.0";
+      accelProfile = "adaptive";
 
-    naturalScrolling = true;
+      naturalScrolling = true;
 
-    tapping = false;
+      tapping = false;
+    };
   };
 }
