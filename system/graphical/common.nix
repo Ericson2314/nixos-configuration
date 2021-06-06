@@ -26,10 +26,13 @@
 
   services.upower.enable = true;
 
-  # no acidental shutdowns.
-  services.logind.lidSwitch = "suspend";
-  services.logind.lidSwitchDocked = "suspend";
-  services.logind.lidSwitchExternalPower = "suspend";
+  # No acidental shutdowns.
+
+  # These are now the default
+  # services.logind.lidSwitch = "suspend";
+  # services.logind.lidSwitchDocked = "ignore";
+  # services.logind.lidSwitchExternalPower = "suspend";
+
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
   '';
