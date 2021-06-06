@@ -7,11 +7,22 @@
     enableAdobeFlash = true;
   };
 
-  sound.enable = true;
-  hardware = {
-    pulseaudio.enable = true;
-    #bluetooth.enable = true;
+  security.rtkit.enable = true; # for pipewire
+
+  sound.enable = false; # sadly conflicts with pipewire
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
   };
+
+  #hardware.bluetooth.enable = true;
 
   services.upower.enable = true;
 
