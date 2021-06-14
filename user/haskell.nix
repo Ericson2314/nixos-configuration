@@ -7,6 +7,7 @@
     cabal-install
     haskellPackages.ghcid
     haskellPackages.hasktags
+    haskellPackages.nix-thunk
   ]);
 
   programs.git.ignores = [
