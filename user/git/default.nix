@@ -42,6 +42,12 @@
       "insteadOf " = https://bitbucket.com;
       "insteadOf  " = http://bitbucket.com;
     };
+    "sendemail" = {
+      smtpEncryption = "tls";
+      smtpServer = "smtp.fastmail.com";
+      smtpUser = "mail@JohnEricson.me";
+      smtpServerPort = 587;
+    };
   };
   programs.git.package = pkgs.gitFull.override { guiSupport = true; };
 }
