@@ -15,6 +15,9 @@
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
 
+  # Enable firmware update manager service
+  services.fwupd.enable = true;
+
   networking = {
     # wireless.enable = true;     # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true; # Enable NetworkManager
