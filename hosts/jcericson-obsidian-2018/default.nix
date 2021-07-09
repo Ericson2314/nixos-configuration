@@ -25,6 +25,10 @@
     allowDiscards = true;
   };
 
+  # Avoid log spam after resume. See
+  # https://bugzilla.kernel.org/show_bug.cgi?id=201857 for details.
+  boot.blacklistedKernelModules = [ "i2c_hid" ];
+
   #virtualisation.virtualbox.host.enable = true;
   ##virtualisation.docker.enable = true;
   #users.groups.docker.members = [ "jcericson" ];
