@@ -70,6 +70,7 @@
   #   enableSSHSupport = true;
   #   pinentryFlavor = "gnome3";
   # };
+  # programs.ssh.startAgent = true;
 
   # List services that you want to enable:
 
@@ -100,8 +101,6 @@
   # unison, etc over SSH
   programs.fish.enable = true;
   programs.zsh.enable = true;
-
-  programs.ssh.startAgent = true;
 
   # Users
   users.defaultUserShell = "/var/run/current-system/sw/bin/fish";
