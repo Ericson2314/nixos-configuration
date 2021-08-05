@@ -37,4 +37,6 @@
   home.packages = with pkgs; [
     dmenu
   ];
+
+  services.redshift = import ./redshift.nix;
 }

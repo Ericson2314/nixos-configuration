@@ -51,4 +51,6 @@
     wofi
     bemenu
   ];
+
+  services.gammastep = import ./redshift.nix;
 }
