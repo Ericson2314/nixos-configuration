@@ -41,9 +41,6 @@
     # Bits of Gnome
     # gnome3.gnome_terminal
     evince
-
-    # Desktop Env
-    dmenu
   ];
 
   programs.alacritty = {

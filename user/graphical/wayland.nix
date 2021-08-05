@@ -10,6 +10,7 @@
     wrapperFeatures.gtk = true; # so that gtk works properly
     config = {
       terminal = "alacritty";
+      menu     = "bemenu-run";
 
       up       = "i";
       down     = "k";
@@ -48,5 +49,6 @@
     mako # notification daemon
     alacritty # Alacritty is the default terminal in the config
     wofi
+    bemenu
   ];
 }

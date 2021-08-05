@@ -33,4 +33,8 @@
     # Double pixels:
     #"*.dpi" = 192;
   };
+
+  home.packages = with pkgs; [
+    dmenu
+  ];
 }
