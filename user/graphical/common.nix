@@ -6,7 +6,6 @@
     #gimpPlugins.resynthesizer
 
     #hexchat
-    thunderbird
 
     #musescore
 

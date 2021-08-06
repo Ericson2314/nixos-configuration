@@ -36,6 +36,7 @@
 
   home.packages = with pkgs; [
     dmenu
+    thunderbird
   ];
 
   services.redshift = import ./redshift.nix;

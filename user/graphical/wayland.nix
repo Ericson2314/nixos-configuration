@@ -50,6 +50,22 @@
     alacritty # Alacritty is the default terminal in the config
     wofi
     bemenu
+    (let t = thunderbird; in stdenv.mkDerivation {
+       pname = t.pname + "-wayland";
+       inherit (t) version;
+       unpackPhase = "true";
+       doBuild = false;
+       nativeBuildInputs = [ buildPackages.makeWrapper ];
+       installPhase = ''
+         mkdir -p $out/bin
+         ln -s "${lib.getBin t}/bin/thunderbird" "$out/bin"
+       '';
+       postFixup = ''
+         for e in $out/bin/*; do
+           wrapProgram $e --set-default MOZ_ENABLE_WAYLAND 1
+         done
+       '';
+    })
   ];
 
   services.gammastep = import ./redshift.nix;
