@@ -37,6 +37,8 @@
   home.packages = with pkgs; [
     dmenu
     thunderbird
+    element-desktop
+    signal-desktop
   ];
 
   services.redshift = import ./redshift.nix;

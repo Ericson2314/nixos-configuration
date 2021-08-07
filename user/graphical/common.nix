@@ -24,9 +24,6 @@
     unzip
     unrar
 
-    element-desktop
-    signal-desktop
-
     haskellPackages.nix-diff
 
     pavucontrol
@@ -34,8 +31,6 @@
     # browser
     # firefox done below
     chromium
-
-    signal-desktop
 
     # Bits of Gnome
     # gnome3.gnome_terminal

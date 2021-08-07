@@ -42,7 +42,24 @@
 
   programs.firefox.package = pkgs.firefox-wayland;
 
-  home.packages = with pkgs; [
+  home.packages = let
+    forceWayland = t: e: f: pkgs.stdenv.mkDerivation {
+       pname = t.pname + "-force-wayland";
+       inherit (t) version;
+       unpackPhase = "true";
+       doBuild = false;
+       nativeBuildInputs = [ pkgs.buildPackages.makeWrapper ];
+       installPhase = ''
+         mkdir -p $out/bin
+         ln -s "${lib.getBin t}/bin/${e}" "$out/bin"
+       '';
+       postFixup = ''
+         for e in $out/bin/*; do
+           wrapProgram $e ${f}
+         done
+       '';
+    };
+  in with pkgs; [
     #swaylock
     #iswayidle
     wl-clipboard
@@ -50,22 +67,9 @@
     alacritty # Alacritty is the default terminal in the config
     wofi
     bemenu
-    (let t = thunderbird; in stdenv.mkDerivation {
-       pname = t.pname + "-wayland";
-       inherit (t) version;
-       unpackPhase = "true";
-       doBuild = false;
-       nativeBuildInputs = [ buildPackages.makeWrapper ];
-       installPhase = ''
-         mkdir -p $out/bin
-         ln -s "${lib.getBin t}/bin/thunderbird" "$out/bin"
-       '';
-       postFixup = ''
-         for e in $out/bin/*; do
-           wrapProgram $e --set-default MOZ_ENABLE_WAYLAND 1
-         done
-       '';
-    })
+    (forceWayland thunderbird "thunderbird" "--set-default MOZ_ENABLE_WAYLAND 1")
+    (forceWayland signal-desktop "signal-desktop" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
+    (forceWayland element-desktop "element-desktop" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
   ];
 
   services.gammastep = import ./redshift.nix;
