@@ -19,6 +19,12 @@
 
       modifier = "Mod4";
 
+      output = {
+        "eDP-1" = {
+          scale = "1";
+        };
+      };
+
       keybindings = let
         cfg = config.wayland.windowManager.sway;
       in lib.mkOptionDefault {
