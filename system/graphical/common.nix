@@ -22,7 +22,10 @@
     #media-session.enable = true;
   };
 
-  #hardware.bluetooth.enable = true;
+  hardware = {
+    #bluetooth.enable = true;
+    opengl.enable = true;
+  };
 
   services.hardware.bolt.enable = true;
 
