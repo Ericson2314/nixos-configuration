@@ -106,7 +106,8 @@
   users.defaultUserShell = "/var/run/current-system/sw/bin/fish";
   users.mutableUsers = false;
   users.users.root = {
-    hashedPassword = null;
+    #hashedPassword = null;
+    hashedPassword = config.users.users.jcericson.hashedPassword;
   };
   users.users.jcericson = {
     uid = 1000;
