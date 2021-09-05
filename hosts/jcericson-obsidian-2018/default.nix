@@ -3,7 +3,7 @@
 {
   imports = [
     ../../system/common.nix
-    ../../system/graphical/common.nix
+    ../../system/graphical/wayland.nix
     ../../system/libinput.nix
     ../../system/video-games.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
