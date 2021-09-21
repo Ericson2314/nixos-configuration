@@ -74,6 +74,7 @@
     wofi
     bemenu
     (forceWayland thunderbird "thunderbird" "--set-default MOZ_ENABLE_WAYLAND 1")
+    (forceWayland chromium "chromium" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
     (forceWayland signal-desktop "signal-desktop" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
     (forceWayland element-desktop "element-desktop" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
   ];
