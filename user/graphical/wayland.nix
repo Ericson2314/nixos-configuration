@@ -50,7 +50,7 @@
 
   home.packages = let
     forceWayland = t: e: f: pkgs.stdenv.mkDerivation {
-       pname = t.pname + "-force-wayland";
+       pname = t.pname or t.name + "-force-wayland";
        inherit (t) version;
        unpackPhase = "true";
        doBuild = false;
