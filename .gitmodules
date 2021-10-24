@@ -1,6 +1,6 @@
 [submodule "dep/home-manager"]
 	path = dep/home-manager
-	url = https://github.com/rycee/home-manager.git
+	url = https://github.com/nix-community/home-manager.git
 	branch = release-21.05
 [submodule "dep/nixpkgs"]
 	path = dep/nixpkgs
