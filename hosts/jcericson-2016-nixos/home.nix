@@ -3,7 +3,7 @@
 {
   imports = [
     ../../user
-    ../../user/graphical/x.nix
+    ../../user/graphical/wayland.nix
     ../../user/video-games.nix
   ];
 
@@ -12,5 +12,7 @@
   };
 
   # TODO get alacritty to respect the above, and remove this.
-  programs.alacritty.settings.font.size = 5.5;
+  programs.alacritty.settings.font.size = 23;
+
+  home.stateVersion = "20.03";
 }
