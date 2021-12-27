@@ -46,8 +46,6 @@ in {
     #scala-mode
     #sbt-mode
 
-    solarized-theme
-
     dash
     #hexrgb
     #oneonone
