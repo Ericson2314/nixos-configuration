@@ -22,7 +22,7 @@
     # https://github.com/nix-community/home-manager/issues/1116
     desktopManager.xterm.enable = true;
 
-    # Enable the KDE Desktop Environment.
+    # Enable the Plasma 5 Desktop Environment.
     # displayManager.sddm.enable = true;
     # desktopManager.plasma5.enable = true;
 
