@@ -21,7 +21,7 @@
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.vboxnet0.useDHCP = true;
+  networking.interfaces.enp0s20f0u2.useDHCP = true;
   networking.interfaces.wlp2s0.useDHCP = true;
 
   # Configure network proxy if necessary
@@ -41,7 +41,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   # environment.systemPackages = with pkgs; [
-  #   wget vim
+  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #   wget
+  #   firefox
   # ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -50,7 +52,6 @@
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
-  #   pinentryFlavor = "gnome3";
   # };
 
   # List services that you want to enable:
@@ -73,13 +74,15 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
+
+  # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
 
-  # Enable touchpad support.
+  # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Enable the KDE Desktop Environment.
+  # Enable the Plasma 5 Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
@@ -95,6 +98,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "20.09"; # Did you read the comment?
+  system.stateVersion = "21.11"; # Did you read the comment?
 
 }
