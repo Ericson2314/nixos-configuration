@@ -5,7 +5,7 @@
     ./common.nix
   ];
 
-  # Enable the X11 windowing system.
+  # Enable screensharing
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
@@ -13,5 +13,4 @@
     ];
     gtkUsePortal = true;
   };
-
 }

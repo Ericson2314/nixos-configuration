@@ -44,4 +44,18 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "18.09";
+
+  # hardware.nvidia.powerManagement.enable = true;
+  # hardware.nvidia.powerManagement.finegrained = true;
+
+  # Unfortunately needed to get drivers
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = false;
+    displayManager.sddm.enable = false;
+    displayManager.xpra.enable = false;
+    displayManager.sx.enable = false;
+    displayManager.startx.enable = false;
+  };
+  systemd.services.display-manager.enable = false;
 }
