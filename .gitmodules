@@ -12,7 +12,7 @@
 	branch = master
 [submodule "dep/spacemacs"]
 	path = dep/spacemacs
-	url = https://github.com/ericson3214/spacemacs
+	url = https://github.com/syl20bnr/spacemacs
 	branch = master
 [submodule "dep/nixpkgs-mozilla"]
 	path = dep/nixpkgs-mozilla
