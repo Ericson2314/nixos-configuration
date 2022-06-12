@@ -13,6 +13,7 @@
     ./misc-dev.nix
     ./secrets.nix
     ./aws.nix
+    ./dark-mode.nix
   ];
 
   systemd.user.startServices = true;
