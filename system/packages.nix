@@ -21,6 +21,7 @@
 
     # Nix
     nix-prefetch-scripts
+    nixos-option
   ];
 
   nix = {
