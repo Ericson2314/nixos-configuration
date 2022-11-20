@@ -25,6 +25,21 @@
         };
       };
 
+      floating.criteria = [
+        {
+          "title" = "Firefox — Sharing Indicator";
+        }
+      ];
+
+      window.commands = [
+        {
+          criteria = {
+            "title" = "Firefox — Sharing Indicator";
+          };
+          command = "nofocus";
+        }
+      ];
+
       keybindings = let
         cfg = config.wayland.windowManager.sway;
       in lib.mkOptionDefault {
