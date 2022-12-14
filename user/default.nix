@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   imports = [
@@ -17,4 +17,7 @@
   ];
 
   systemd.user.startServices = true;
+
+  home.username = "jcericson";
+  home.homeDirectory = "/home/${config.home.username}";
 }
