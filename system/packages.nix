@@ -27,18 +27,21 @@
   nix = {
     # Don't use unstable if there is a schema change!
     #package = pkgs.nixUnstable;
-    useSandbox = true;
-    binaryCaches = [
-      "https://cache.nixos.org/"
-      "https://nixcache.reflex-frp.org"
-    ];
-    trustedBinaryCaches = [
-      "https://hydra.nixos.org/"
-      "https://hydra.cryp.to"
-    ];
-    binaryCachePublicKeys = [
-      "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
-    ];
+
+    settings = {
+      sandbox = true;
+      substituters = [
+        "https://cache.nixos.org/"
+        "https://nixcache.reflex-frp.org"
+      ];
+      trusted-substituters = [
+        "https://hydra.nixos.org/"
+        "https://hydra.cryp.to"
+      ];
+      trusted-public-keys = [
+        "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
+      ];
+    };
     nixPath = let
       nixpkgs = builtins.toPath ../dep/nixpkgs;
     in [

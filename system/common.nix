@@ -118,8 +118,8 @@
     useDefaultShell = true;
   };
 
-  services.ipfs = {
-    #package = pkgs.ipfs_latest;
+  services.kubo = {
+    #package = pkgs.kubo_latest;
     enable = true;
   };
   networking.firewall.allowedTCPPorts = [ 4001 ];
