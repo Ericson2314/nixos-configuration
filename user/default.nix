@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -19,5 +19,5 @@
   systemd.user.startServices = true;
 
   home.username = "jcericson";
-  home.homeDirectory = "/home/${config.home.username}";
+  home.homeDirectory = "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}";
 }

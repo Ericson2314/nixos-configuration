@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   gtk = {
@@ -14,10 +14,15 @@
       gtk-application-prefer-dark-theme = true;
     };
   };
-  dconf.settings."org/gnome/desktop/interface" = {
-    color-scheme = "prefer-dark";
-  };
-  dconf.settings."org/freedesktop/appearance" = {
-    color-scheme = 1;
+  dconf = {
+    enable = pkgs.stdenv.isLinux;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+      "org/freedesktop/appearance" = {
+        color-scheme = 1;
+      };
+    };
   };
 }
