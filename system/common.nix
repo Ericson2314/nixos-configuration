@@ -76,9 +76,11 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    forwardX11 = true;
-    permitRootLogin = "no";
-    passwordAuthentication = false;
+    settings = {
+      X11Forwarding = true;
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
   };
 
   # Open ports in the firewall.
