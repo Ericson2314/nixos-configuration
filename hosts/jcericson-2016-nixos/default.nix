@@ -23,8 +23,8 @@
     allowDiscards = true;
   };
 
-  nix.maxJobs = 2;
-  nix.buildCores = 8;
+  nix.settings.max-jobs = 2;
+  nix.settings.build-cores = 8;
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
