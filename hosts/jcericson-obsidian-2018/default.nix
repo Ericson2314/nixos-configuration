@@ -29,7 +29,8 @@
   # https://bugzilla.kernel.org/show_bug.cgi?id=201857 for details.
   boot.blacklistedKernelModules = [ "i2c_hid" ];
 
-  #virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  users.groups.vboxusers.members = [ "jcericson" ];
   ##virtualisation.docker.enable = true;
   #users.groups.docker.members = [ "jcericson" ];
 
