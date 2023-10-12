@@ -7,8 +7,10 @@
     ../../system/libinput.nix
     ../../system/video-games.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    <nixos-hardware/dell/xps/15-9550/nvidia> # from the nixos-hardware repo
   ];
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
     hostName = "jcericson-2023-nixos"; # Define your hostname.
@@ -24,10 +26,6 @@
     preLVM = true;
     allowDiscards = true;
   };
-
-  # Avoid log spam after resume. See
-  # https://bugzilla.kernel.org/show_bug.cgi?id=201857 for details.
-  boot.blacklistedKernelModules = [ "i2c_hid" ];
 
   virtualisation.virtualbox.host.enable = true;
   users.groups.vboxusers.members = [ "jcericson" ];
@@ -45,9 +43,6 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "18.09";
-
-  # hardware.nvidia.powerManagement.enable = true;
-  # hardware.nvidia.powerManagement.finegrained = true;
 
   # Unfortunately needed to get drivers
   services.xserver = {
