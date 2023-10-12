@@ -11,7 +11,7 @@
   ];
 
   networking = {
-    hostName = "jcericson-obsidian-2018"; # Define your hostname.
+    hostName = "jcericson-2023-nixos"; # Define your hostname.
     hostId = "2a5d5725";
 
     #interfaces.wlp2s0.useDHCP = true;
@@ -20,7 +20,7 @@
 
   # The luk partitions isn't autodetected
   boot.initrd.luks.devices."luksroot" = {
-    device = "/dev/disk/by-partuuid/13608ae1-f65b-449b-8e6e-67e2dc7b2ffd";
+    device = "/dev/disk/by-partuuid/86b51f08-155e-43c3-91c8-c18b63e3d983";
     preLVM = true;
     allowDiscards = true;
   };
