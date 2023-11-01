@@ -114,7 +114,12 @@
     uid = 1000;
     createHome = true;
     description = "John Cotton Ericson";
-    extraGroups = [ "jcericson" "networkmanager" "wheel" ];
+    extraGroups = [
+      "jcericson"
+      "networkmanager"
+      "wheel"
+      config.services.kubo.group
+    ];
     isSystemUser = false;
     isNormalUser = true;
     useDefaultShell = true;
