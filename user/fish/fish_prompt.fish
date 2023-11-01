@@ -10,8 +10,8 @@ function fish_prompt --description 'Write out the prompt'
     set -g __fish_prompt_normal (set_color normal)
   end
 
-  if not set -q __fish_color_blue
-    set -g __fish_color_blue (set_color -o (hostname | md5sum | head -c 6))
+  if not set -q __fish_prompt_color
+    set -g __fish_prompt_color (set_color -o (hostname | md5sum | head -c 6))
   end
 
   #Set the color for the status depending on the value
@@ -24,7 +24,7 @@ function fish_prompt --description 'Write out the prompt'
 
   printf '%s(%s)%s ' "$__fish_color_status" "$stat" "$__fish_prompt_normal"
 
-  printf '%s%s@%s%s ' "$__fish_color_blue" "$USER" "$__fish_prompt_hostname" "$__fish_prompt_normal"
+  printf '%s%s@%s%s ' "$__fish_prompt_color" "$USER" "$__fish_prompt_hostname" "$__fish_prompt_normal"
 
   printf '%s%s ' "$display_pwd" (__fish_git_prompt)
 
