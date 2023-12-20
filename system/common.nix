@@ -9,6 +9,9 @@
     ./packages.nix
   ];
 
+  # Faster, nicer input for LUKS
+  boot.initrd.systemd.enable = true;
+
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
 
