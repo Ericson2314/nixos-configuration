@@ -5,12 +5,12 @@
     # Moved out cause it is big
     ./pubkeys.nix
 
-    # Not tracked, so doesn't need to go in per-machine subdir
-    ../../passwd.nix
-
     # Portable nice to haves
     ./packages.nix
   ];
+
+  # Faster, nicer input for LUKS
+  boot.initrd.systemd.enable = true;
 
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
