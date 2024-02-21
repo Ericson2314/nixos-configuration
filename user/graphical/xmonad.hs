@@ -34,7 +34,7 @@ myWorkspaces =
   , ("0", xK_0)
   ]
 
-myKeys (conf @ (XConfig {XMonad.modMask = modm})) = M.fromList $
+myKeys (conf@(XConfig {XMonad.modMask = modm})) = M.fromList $
   [ ((modm,               xK_p),   spawn "dmenu_run")
   , ((modm,               xK_F12), sendMessage ToggleStruts)
 
