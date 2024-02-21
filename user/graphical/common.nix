@@ -33,6 +33,11 @@
     evince
   ];
 
+  home.pointerCursor = {
+    name = "Vanilla-DMZ";
+    package = pkgs.vanilla-dmz;
+  };
+
   programs.alacritty = {
     enable = true;
     settings = {

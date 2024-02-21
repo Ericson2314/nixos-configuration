@@ -16,11 +16,9 @@
       config = ./xmonad.hs;
       #extraPackages = p: with p; [ taffybar ];
     };
-    pointerCursor = {
-      name = "Vanilla-DMZ";
-      package = pkgs.vanilla-dmz;
-    };
   };
+
+  home.pointerCursor.x11.enable = true;
 
   #services.taffybar.enable = true;
   xdg.configFile."taffybar/taffybar.hs".source = ./taffybar.hs;

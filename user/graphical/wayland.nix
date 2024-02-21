@@ -58,7 +58,7 @@
             "move container to workspace number 10";
       };
     };
-    systemdIntegration = true;
+    systemd.enable = true;
   };
 
   programs.firefox.package = pkgs.firefox-wayland;
