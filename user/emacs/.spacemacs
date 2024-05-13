@@ -352,22 +352,20 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cursor-type 'bar)
  '(evil-move-beyond-eol t)
- '(frame-background-mode (quote dark))
+ '(frame-background-mode 'dark)
  '(haskell-process-args-cabal-new-repl
-   (quote
-    ("--ghc-option=-ferror-spans" "--ghc-option=-fdiagnostics-color=always")))
+   '("--ghc-option=-ferror-spans" "--ghc-option=-fdiagnostics-color=always"))
  '(haskell-process-auto-import-loaded-modules t t)
  '(haskell-process-log t)
  '(haskell-process-suggest-remove-import-lines t t)
- '(haskell-process-type (quote cabal-new-repl))
- '(haskell-process-wrapper-function (quote identity))
+ '(haskell-process-type 'cabal-new-repl)
+ '(haskell-process-wrapper-function 'identity)
  '(indent-tabs-mode nil)
  '(inhibit-startup-echo-area-message t)
  '(inhibit-startup-screen t)
- '(nix-indent-function (quote nix-indent-line))
- '(package-selected-packages
-    (yapfify ws-butler volatile-highlights vi-tilde-fringe uuidgen toml-mode smeargle ace-jump-helm-line ace-link ace-window ack adaptive-wrap aggressive-indent anaconda-mode anzu auto-compile auto-dictionary auto-highlight-symbol avy bind-key bind-map cargo clean-aindent-mode cmm-mode coffee-mode column-enforce-mode company company-ghc company-ghci cython-mode dash-functional define-word diff-hl diminish dirtree dumb-jump elisp-slime-nav emmet-mode eval-sexp-fu evil evil-anzu evil-args evil-ediff evil-escape evil-exchange evil-iedit-state evil-indent-plus evil-lisp-state evil-magit evil-matchit evil-mc evil-nerd-commenter evil-numbers evil-search-highlight-persist evil-surround evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar exec-path-from-shell expand-region eyebrowse f fancy-battery fill-column-indicator flx flx-ido flycheck flyspell-correct flyspell-correct-helm fringe-helper gh-md ghc ghub git-commit git-gutter git-gutter+ git-gutter-fringe git-gutter-fringe+ git-link git-messenger git-timemachine gitattributes-mode gitconfig-mode gitignore-mode golden-ratio google-translate goto-chg haml-mode haskell-mode haskell-snippets helm helm-ag helm-core helm-css-scss helm-descbinds helm-flx helm-gitignore helm-hoogle helm-make helm-mode-manager helm-projectile helm-pydoc helm-swoop helm-themes highlight highlight-indentation highlight-numbers highlight-parentheses hindent hl-todo hlint-refactor hungry-delete hy-mode hydra iasm-mode idris-mode iedit indent-guide intero js-doc js2-mode js2-refactor json-mode json-reformat json-snatcher lexbind-mode link-hint linum-relative live-py-mode livid-mode lorem-ipsum macrostep magit magit-gitflow magit-popup markdown-toc meson-mode mmm-mode move-text multiple-cursors neotree nix-mode oneonone open-junk-file org-bullets org-plus-contrib orgit packed paradox parent-mode pcre2el persp-mode pip-requirements popup popwin pos-tip powerline pug-mode py-isort pyenv-mode pytest pythonic pyvenv racer rainbow-delimiters request restart-emacs rust-mode rust-playground s sass-mode sbt-mode scala-mode scala-mode2 scss-mode shm simple-httpd skewer-mode slim-mode smartparens spaceline spinner sql-indent string-inflection tagedit toc-org tuareg undo-tree use-package web-beautify which-key winum with-editor yaml-mode yasnippet))))
+ '(nix-indent-function 'nix-indent-line))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
