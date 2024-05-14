@@ -13,8 +13,6 @@
   };
 
   home.packages = with pkgs; [
-    zoom-us
-    tdesktop
   ];
 
   # TODO get alacritty to respect the above, and remove this.

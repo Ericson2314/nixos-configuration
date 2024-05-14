@@ -26,11 +26,15 @@
 
     haskellPackages.nix-diff
 
+    telegram-desktop
+
     pavucontrol
 
     # Bits of Gnome
     # gnome3.gnome_terminal
     evince
+
+    zoom-us
   ];
 
   home.pointerCursor = {
