@@ -1,11 +1,6 @@
 { lib, pkgs, ... }:
 
-let
-  # For reasons I dont't understand there is infinite recursion if I take pkgs as
-  # a parameter.
-  inherit ((import <nixpkgs> {}).stdenv) isDarwin;
-
-in {
+{
   programs.emacs.enable = true;
   programs.emacs.extraPackages = epkgs: with epkgs; [
     #agda2-mode
@@ -70,10 +65,8 @@ in {
   home.file.".emacs.d/spacemacs".source = ../../dep/spacemacs;
   home.file.".emacs.d/init.el".source = ./init.el;
 
-} // lib.optionalAttrs (!isDarwin) {
-
   services.emacs = {
-    enable = true;
-    socketActivation.enable = true;
+    enable = pkgs.stdenv.isLinux;
+    socketActivation.enable = pkgs.stdenv.isLinux;
   };
 }
