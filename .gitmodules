@@ -1,7 +1,3 @@
-[submodule "dep/home-manager"]
-	path = dep/home-manager
-	url = https://github.com/nix-community/home-manager.git
-	branch = release-23.11
 [submodule "dep/nixpkgs"]
 	path = dep/nixpkgs
 	url = https://github.com/NixOS/nixpkgs.git
