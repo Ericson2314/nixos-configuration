@@ -2,10 +2,6 @@
 	path = dep/nixpkgs
 	url = https://github.com/NixOS/nixpkgs.git
 	branch = nixos-23.11
-[submodule "dep/obelisk"]
-	path = dep/obelisk
-	url = https://github.com/obsidiansystems/obelisk.git
-	branch = master
 [submodule "dep/nixpkgs-mozilla"]
 	path = dep/nixpkgs-mozilla
 	url = https://github.com/mozilla/nixpkgs-mozilla.git
