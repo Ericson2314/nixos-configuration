@@ -62,7 +62,7 @@
   #home.sessionVariables.VISUAL = "emacsclient --create-frame --tty";
 
   #home.file.".spacemacs".source = ./.spacemacs;
-  home.file.".emacs.d/spacemacs".source = ../../dep/spacemacs;
+  home.file.".emacs.d/spacemacs".source = import ../../dep/spacemacs/thunk.nix;
   home.file.".emacs.d/init.el".source = ./init.el;
 
   services.emacs = {
