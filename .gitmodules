@@ -1,4 +1,0 @@
-[submodule "dep/nixpkgs"]
-	path = dep/nixpkgs
-	url = https://github.com/NixOS/nixpkgs.git
-	branch = nixos-23.11
