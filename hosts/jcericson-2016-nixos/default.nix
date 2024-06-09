@@ -7,7 +7,7 @@
     ../../system/libinput.nix
     ../../system/video-games.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    (import ../../dep/nixos-hardware/thunk.nix + "dell/xps/15-9550/nvidia")
+    (import ../../dep/nixos-hardware/thunk.nix + "/dell/xps/15-9550/nvidia")
   ];
 
   networking = {

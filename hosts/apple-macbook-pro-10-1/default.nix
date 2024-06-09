@@ -7,7 +7,7 @@
     ../../system/libinput.nix
     ../../system/yubikey.nix
     ../../../hardware-configuration.nix # Include the results of the hardware scan.
-    (import ../../dep/nixos-hardware/thunk.nix + "apple/macbook-pro/10-1")
+    (import ../../dep/nixos-hardware/thunk.nix + "/apple/macbook-pro/10-1")
   ];
 
   # For Broadcom chip
