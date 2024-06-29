@@ -5,6 +5,7 @@
     ../../system/common.nix
     ../../system/graphical/wayland.nix
     ../../system/libinput.nix
+    ../../system/libvirt.nix
     ../../system/video-games.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
   ];
@@ -27,9 +28,9 @@
     allowDiscards = true;
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  users.groups.vboxusers.members = [ "jcericson" ];
-  ##virtualisation.docker.enable = true;
+  #virtualisation.virtualbox.host.enable = true;
+  #users.groups.vboxusers.members = [ "jcericson" ];
+  #virtualisation.docker.enable = true;
   #users.groups.docker.members = [ "jcericson" ];
 
   #networking.firewall.allowedUDPPortRanges = [
