@@ -49,10 +49,10 @@
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = false;
-    displayManager.sddm.enable = false;
     displayManager.xpra.enable = false;
     displayManager.sx.enable = false;
     displayManager.startx.enable = false;
   };
+  services.displayManager.sddm.enable = false;
   systemd.services.display-manager.enable = false;
 }
