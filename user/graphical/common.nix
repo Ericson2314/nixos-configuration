@@ -44,10 +44,6 @@
 
   programs.alacritty = {
     enable = true;
-    settings = {
-      scrollback.multiplier = -1;
-      scrollback.faux_multiplier = -1;
-    };
   };
 
   programs.firefox.enable = true;
