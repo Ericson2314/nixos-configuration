@@ -16,7 +16,7 @@
   ];
 
   # TODO get alacritty to respect the above, and remove this.
-  programs.alacritty.settings.font.size = 17;
+  programs.alacritty.settings.font.size = 23;
 
   home.stateVersion = "20.09";
 }
