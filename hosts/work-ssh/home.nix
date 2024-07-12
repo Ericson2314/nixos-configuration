@@ -4,6 +4,7 @@
   imports = [
     ../../user
     ../../user/work.nix
+    ../../user/textual.nix
   ];
 
   home.packages = with pkgs; [
