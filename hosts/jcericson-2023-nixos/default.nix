@@ -8,6 +8,7 @@
     ../../system/libvirt.nix
     ../../system/video-games.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
+    ./home-assistant.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
