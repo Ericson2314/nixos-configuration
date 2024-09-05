@@ -9,6 +9,8 @@
 
     #musescore
 
+    libreoffice
+
     meld
 
     qemu
