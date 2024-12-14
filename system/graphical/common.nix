@@ -9,7 +9,6 @@
 
   security.rtkit.enable = true; # for pipewire
 
-  sound.enable = false; # sadly conflicts with pipewire
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -24,7 +23,7 @@
 
   hardware = {
     bluetooth.enable = true;
-    opengl.enable = true;
+    graphics.enable = true;
   };
 
   programs.dconf.enable = true;
@@ -49,7 +48,6 @@
   services.physlock.allowAnyUser = true;
 
   # Media Keys
-  sound.mediaKeys.enable = true;
   services.actkbd.bindings = [
     { keys = [ 224 ]; events = [ "key" "rep" ]; command = "${pkgs.light}/bin/light -U 4"; }
     { keys = [ 225 ]; events = [ "key" "rep" ]; command = "${pkgs.light}/bin/light -A 4"; }
