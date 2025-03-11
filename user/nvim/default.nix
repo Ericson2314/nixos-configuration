@@ -9,6 +9,10 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
     ];
+    extraLuaConfig = ''
+
+      require('lspconfig').clangd.setup({})
+    '';
   };
 
   # TODO include other neovim settings
