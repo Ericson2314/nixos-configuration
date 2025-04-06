@@ -19,14 +19,13 @@
   services.fwupd.enable = true;
 
   networking = {
-    # wireless.enable = true;     # Enables wireless support via wpa_supplicant.
-    networkmanager.enable = true; # Enable NetworkManager
+    # Pick only one of the below networking options.
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   };
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
+  # Set your time zone.
+  time.timeZone = "America/New_York";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -38,6 +37,7 @@
   #console = {
   #  font = "Lat2-Terminus16";
   #  keyMap = "us";
+  #  useXkbConfig = true; # use xkb.options in tty.
   #};
 
   # Extra Fonts
@@ -58,9 +58,6 @@
       sourceHanSansPackages."simplified-chinese"
     ];
   };
-
-  # Set your time zone.
-  time.timeZone = "America/New_York";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -120,6 +117,9 @@
       "wheel"
       config.services.kubo.group
     ];
+    # packages = with pkgs; [
+    #   tree
+    # ];
     isSystemUser = false;
     isNormalUser = true;
     useDefaultShell = true;
@@ -132,4 +132,9 @@
   };
   networking.firewall.allowedTCPPorts = [ 4001 ];
   networking.firewall.allowedUDPPorts = [ 4001 ];
+
+  # Copy the NixOS configuration file and link it from the resulting system
+  # (/run/current-system/configuration.nix). This is useful in case you
+  # accidentally delete configuration.nix.
+  # system.copySystemConfiguration = true;
 }

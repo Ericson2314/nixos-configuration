@@ -8,8 +8,8 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    layout = "us";
-    xkbOptions = "eurosign:e";
+    xkb.layout = "us";
+    xkb.options = "eurosign:e"; #,caps:escape";
     autorun = true;
 
     # Enable the Light Desktop Manager
