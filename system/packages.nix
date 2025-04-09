@@ -25,8 +25,8 @@
   ];
 
   nix = {
-    # Don't use unstable if there is a schema change!
-    #package = pkgs.nixUnstable;
+    # Dogfooding the most recent release! 🫡
+    package = pkgs.nixVersions.nix_2_28;
 
     settings = {
       sandbox = true;
