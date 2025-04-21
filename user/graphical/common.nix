@@ -48,5 +48,9 @@
     enable = true;
   };
 
+  home.sessionVariables = {
+    TERMINAL = "alacritty";
+  };
+
   programs.firefox.enable = true;
 }
