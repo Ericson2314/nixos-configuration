@@ -10,7 +10,7 @@
     wrapperFeatures.gtk = true; # so that gtk works properly
     config = {
       terminal = "alacritty";
-      menu     = "bemenu-run";
+      menu     = "sirula";
 
       up       = "i";
       down     = "k";
@@ -61,6 +61,12 @@
     systemd.enable = true;
   };
 
+  xdg.configFile."sirula/config.toml".source = (pkgs.formats.toml {}).generate "sirula-config" {
+    # Switch to left side
+    anchor_left = true;
+    anchor_right = false;
+  };
+
   programs.firefox.package = pkgs.firefox-wayland;
 
   home.packages = let
@@ -87,7 +93,7 @@
     mako # notification daemon
     alacritty # Alacritty is the default terminal in the config
     wofi
-    bemenu
+    sirula # Launcher
     niri # Considering using instead of Sway
     (forceWayland thunderbird "thunderbird" "--set-default MOZ_ENABLE_WAYLAND 1")
     (forceWayland chromium "chromium" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
