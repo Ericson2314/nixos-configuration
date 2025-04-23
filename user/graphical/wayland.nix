@@ -67,26 +67,12 @@
     anchor_right = false;
   };
 
-  programs.firefox.package = pkgs.firefox-wayland;
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+  };
 
-  home.packages = let
-    forceWayland = t: e: f: pkgs.stdenv.mkDerivation {
-       pname = t.pname or t.name + "-force-wayland";
-       inherit (t) version;
-       unpackPhase = "true";
-       doBuild = false;
-       nativeBuildInputs = [ pkgs.buildPackages.makeWrapper ];
-       installPhase = ''
-         mkdir -p $out/bin
-         ln -s "${lib.getBin t}/bin/${e}" "$out/bin"
-       '';
-       postFixup = ''
-         for e in $out/bin/*; do
-           wrapProgram $e ${f}
-         done
-       '';
-    };
-  in with pkgs; [
+  home.packages = with pkgs; [
     #swaylock
     #iswayidle
     wl-clipboard
@@ -95,10 +81,6 @@
     wofi
     sirula # Launcher
     niri # Considering using instead of Sway
-    (forceWayland thunderbird "thunderbird" "--set-default MOZ_ENABLE_WAYLAND 1")
-    (forceWayland chromium "chromium" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
-    (forceWayland signal-desktop "signal-desktop" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
-    (forceWayland element-desktop "element-desktop" "--add-flags '--enable-features=UseOzonePlatform --ozone-platform=wayland'")
   ];
 
   services.gammastep = import ./redshift.nix;

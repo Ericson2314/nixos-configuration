@@ -26,9 +26,15 @@
     unzip
     unrar
 
-    haskellPackages.nix-diff
+    chromium
 
+    thunderbird
+
+    element-desktop
+    signal-desktop
     telegram-desktop
+
+    haskellPackages.nix-diff
 
     pavucontrol
 
