@@ -10,7 +10,7 @@
     #musescore
 
     libreoffice
-
+    dbeaver-bin
     meld
 
     qemu
