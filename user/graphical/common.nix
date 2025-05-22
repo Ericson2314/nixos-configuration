@@ -28,7 +28,7 @@
 
     chromium
 
-    thunderbird
+    #thunderbird
 
     element-desktop
     signal-desktop
