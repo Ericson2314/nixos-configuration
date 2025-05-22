@@ -25,8 +25,8 @@
   ];
 
   nix = {
-    # Dogfooding the most recent release! 🫡
-    package = pkgs.nixVersions.nix_2_28;
+    # Dogfooding master! 🫡
+    package = pkgs.nixVersions.git;
 
     settings = {
       sandbox = true;
