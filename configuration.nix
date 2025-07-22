@@ -46,7 +46,7 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  # hardware.pulseaudio.enable = true;
+  # services.pulseaudio.enable = true;
   # OR
   # services.pipewire = {
   #   enable = true;
@@ -67,8 +67,8 @@
 
   # programs.firefox.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile.
+  # You can use https://search.nixos.org/ to find more packages (and options).
   # environment.systemPackages = with pkgs; [
   #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #   wget
@@ -115,6 +115,6 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
