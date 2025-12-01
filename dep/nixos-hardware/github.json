@@ -3,6 +3,6 @@
   "repo": "nixos-hardware",
   "branch": "master",
   "private": false,
-  "rev": "cc66fddc6cb04ab479a1bb062f4d4da27c936a22",
-  "sha256": "10xfsi90sy0kflswv7dhg9nfv1r55rn0m98hjygg29ixb7r48p4w"
+  "rev": "9154f4569b6cdfd3c595851a6ba51bfaa472d9f3",
+  "sha256": "1vmlcda7864ya2byxivnpzkqf41cavj9ms5hjh6i0h8anls56lk6"
 }
