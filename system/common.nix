@@ -47,15 +47,11 @@
     packages = with pkgs; [
       corefonts  # Micrsoft free fonts
       inconsolata  # monospaced
-      ubuntu_font_family  # Ubuntu fonts
+      ubuntu-classic  # Ubuntu fonts
       unifont # some international languages
       source-code-pro
 
-      # Adobe Source Han Sans
-      sourceHanSansPackages.korean
-      sourceHanSansPackages.japanese
-      sourceHanSansPackages."traditional-chinese"
-      sourceHanSansPackages."simplified-chinese"
+      source-han-sans # Adobe Source Han Sans
     ];
   };
 
