@@ -34,8 +34,6 @@
     signal-desktop
     telegram-desktop
 
-    haskellPackages.nix-diff
-
     pavucontrol
 
     # Bits of Gnome
