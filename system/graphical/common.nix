@@ -39,9 +39,7 @@
   # services.logind.lidSwitchDocked = "ignore";
   # services.logind.lidSwitchExternalPower = "suspend";
 
-  services.logind.extraConfig = ''
-    HandlePowerKey=suspend
-  '';
+  services.logind.settings.Login.HandlePowerKey = "suspend";
 
   # locks X and text vtys.
   services.physlock.enable = true;

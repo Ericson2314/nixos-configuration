@@ -7,7 +7,7 @@
     # emacs # in user config, due to customization
 
     # Development
-    gitAndTools.tig
+    tig
 
     # Admin
     acpi

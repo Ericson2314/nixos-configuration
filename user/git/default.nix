@@ -7,10 +7,10 @@
   ];
 
   # TODO multiple "insteadOf"
-  programs.git.userName = "John Ericson";
+  programs.git.settings.user.name = "John Ericson";
 
   # Need to override on work machines
-  programs.git.userEmail = lib.mkDefault "git@JohnEricson.me";
+  programs.git.settings.user.email = lib.mkDefault "git@JohnEricson.me";
 
   programs.git.iniContent = {
     "push" = {

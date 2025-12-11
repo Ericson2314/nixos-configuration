@@ -12,9 +12,12 @@
 
   programs.ssh = {
     enable = true;
-    controlMaster = "auto";
-    controlPath = "~/.ssh/master-%C";
+    enableDefaultConfig = false;
     matchBlocks = {
+      "*" = {
+        controlMaster = "auto";
+        controlPath = "~/.ssh/master-%C";
+      };
       "bitbucket.com".user = "git";
       "bitbucket.org".user = "git";
       "github.com".user = "git";
