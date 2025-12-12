@@ -13,7 +13,7 @@
     # which does seem to be valid Lua, but is hard for me to read.
     extraLuaConfig = ''
 
-      require('lspconfig').clangd.setup({})
+      vim.lsp.enable('clangd')
     '';
   };
 
