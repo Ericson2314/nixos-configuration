@@ -8,12 +8,16 @@
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
+      lean-nvim
+      plenary-nvim
     ];
     # The leading newline makes the generated code not be one big line,
     # which does seem to be valid Lua, but is hard for me to read.
     extraLuaConfig = ''
 
       vim.lsp.enable('clangd')
+
+      require('lean').setup({})
     '';
   };
 
