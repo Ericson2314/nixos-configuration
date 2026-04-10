@@ -25,9 +25,6 @@
   ];
 
   nix = {
-    # Dogfooding master! 🫡
-    package = pkgs.nixVersions.git;
-
     settings = {
       sandbox = true;
       substituters = [

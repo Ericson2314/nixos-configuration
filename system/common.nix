@@ -7,6 +7,9 @@
 
     # Portable nice to haves
     ./packages.nix
+
+    # Dogfooding nix from source
+    ./nix-dogfooding.nix
   ];
 
   # Faster, nicer input for LUKS
