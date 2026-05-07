@@ -10,7 +10,10 @@
     (import ../../dep/nixos-hardware/thunk.nix + "/framework/13-inch/12th-gen-intel")
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    memtest86.enable = true;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {

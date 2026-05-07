@@ -6,7 +6,10 @@
     ../../../hardware-configuration.nix # Include the results of the hardware scan.
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    memtest86.enable = true;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "John-VirtualBox-NixOS"; # Define your hostname.
