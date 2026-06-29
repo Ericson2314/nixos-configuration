@@ -104,9 +104,9 @@ in {
 
   home.packages = [
     pkgs.nil
-    pkgs.nodePackages.bash-language-server
-    #pkgs.nodePackages.dockerfile-language-server-nodejs
-    pkgs.nodePackages.typescript-language-server
+    pkgs.bash-language-server
+    #pkgs.dockerfile-language-server-nodejs
+    pkgs.typescript-language-server
     pkgs.pyright
   ];
 }
