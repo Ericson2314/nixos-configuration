@@ -41,8 +41,6 @@
   #  { from = 6112; to = 6119; }
   #];
 
-  programs.adb.enable = true;
-
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
@@ -65,11 +63,11 @@
   # Unfortunately needed to get drivers
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = false;
     displayManager.xpra.enable = false;
     displayManager.sx.enable = false;
     displayManager.startx.enable = false;
   };
+  services.displayManager.gdm.enable = false;
   services.displayManager.sddm.enable = false;
   systemd.services.display-manager.enable = false;
 }

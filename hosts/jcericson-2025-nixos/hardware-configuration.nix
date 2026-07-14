@@ -33,6 +33,10 @@
       fsType = "vfat";
     };
 
+  # "It is highly recommended to set it to `false`, the new default from
+  # 26.11 on, to reduce the risk of data loss."
+  boot.zfs.forceImportRoot = false;
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
