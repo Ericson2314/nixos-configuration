@@ -28,4 +28,5 @@ in
   nix.settings.extra-experimental-features = [ "auto-allocate-uids" "cgroups" ];
   nix.settings.auto-allocate-uids = true;
   nix.settings.use-cgroups = true;
+  nix.settings.extra-system-features = [ "uid-range" ];
 }
