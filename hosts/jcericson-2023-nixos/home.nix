@@ -8,6 +8,16 @@
     ../../user/work.nix
   ];
 
+  # Auto-detection would otherwise pick a scale I do not want here.
+  wayland.windowManager.niri.settings._children = [
+    {
+      output = {
+        _args = [ "DP-1" ];
+        scale = 1;
+      };
+    }
+  ];
+
   xresources.properties = {
     "*.dpi" = 120;
   };
