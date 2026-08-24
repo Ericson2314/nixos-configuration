@@ -9,7 +9,7 @@
   services.xserver = {
     enable = true;
     xkb.layout = "us";
-    xkb.options = "eurosign:e"; #,caps:escape";
+    xkb.options = "eurosign:e"; # ,caps:escape";
     autorun = true;
 
     # Enable the Light Desktop Manager

@@ -24,7 +24,7 @@
   networking = {
     # Pick only one of the below networking options.
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    networkmanager.enable = true; # Easiest to use and most distros use this by default.
   };
 
   # Set your time zone.
@@ -48,9 +48,9 @@
     #enableFontDir = true;
     #enableGhostscriptFonts = true;
     packages = with pkgs; [
-      corefonts  # Micrsoft free fonts
-      inconsolata  # monospaced
-      ubuntu-classic  # Ubuntu fonts
+      corefonts # Micrsoft free fonts
+      inconsolata # monospaced
+      ubuntu-classic # Ubuntu fonts
       unifont # some international languages
       source-code-pro
 
@@ -88,7 +88,10 @@
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = [ pkgs.gutenprint pkgs.hplip ];
+    drivers = [
+      pkgs.gutenprint
+      pkgs.hplip
+    ];
     #clientConf = ''
     #  ServerName printhost.cs.brown.edu
     #'';
@@ -127,7 +130,7 @@
   services.kubo = {
     #package = pkgs.kubo_latest;
     enable = true;
-    settings.Addresses.API = ["/ip4/127.0.0.1/tcp/5001"];
+    settings.Addresses.API = [ "/ip4/127.0.0.1/tcp/5001" ];
   };
   networking.firewall.allowedTCPPorts = [ 4001 ];
   networking.firewall.allowedUDPPorts = [ 4001 ];

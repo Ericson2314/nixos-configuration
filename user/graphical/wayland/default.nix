@@ -1,4 +1,10 @@
-{ lib, pkgs, config, options, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  options,
+  ...
+}:
 
 {
   imports = [
@@ -18,7 +24,7 @@
     };
   };
 
-  xdg.configFile."sirula/config.toml".source = (pkgs.formats.toml {}).generate "sirula-config" {
+  xdg.configFile."sirula/config.toml".source = (pkgs.formats.toml { }).generate "sirula-config" {
     # Switch to left side
     anchor_left = true;
     anchor_right = false;

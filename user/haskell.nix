@@ -2,8 +2,9 @@
 
 {
   home.packages = [
-    (import ../dep/obelisk {}).command
-  ] ++ (with pkgs; [
+    (import ../dep/obelisk { }).command
+  ]
+  ++ (with pkgs; [
     cabal-install
     haskellPackages.ghcid
     haskellPackages.hasktags

@@ -50,7 +50,8 @@ let
     "C-right" = "${type}_next_word_start";
   };
 
-in {
+in
+{
   programs.helix.enable = true;
   programs.helix.defaultEditor = true;
 
@@ -73,13 +74,11 @@ in {
       select = "bar";
     };
 
-    keys.normal = normal-keys "move"
+    keys.normal =
+      normal-keys "move"
       // cua "move"
-      // lib.mapAttrs'
-        (name: value: lib.nameValuePair ("S-" + name) value)
-        (cua "extend");
-    keys.select = normal-keys "extend"
-      // cua "extend";
+      // lib.mapAttrs' (name: value: lib.nameValuePair ("S-" + name) value) (cua "extend");
+    keys.select = normal-keys "extend" // cua "extend";
 
     keys.insert = {
       C-c = "normal_mode";
@@ -91,13 +90,13 @@ in {
       pyright = {
         command = "pyright-langserver";
         args = [ "--stdio" ];
-        config = {};
+        config = { };
       };
     };
     language = [
       {
         name = "python";
-        language-servers = ["pyright"];
+        language-servers = [ "pyright" ];
       }
     ];
   };
