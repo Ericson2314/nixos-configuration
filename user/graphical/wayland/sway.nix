@@ -1,9 +1,23 @@
 { lib, pkgs, config, options, ... }:
 
 {
-  imports = [
-    ./common.nix
-  ];
+  xdg.portal = {
+    config.sway.default = [
+      "gtk"
+      #"wlr"
+    ];
+
+    # wlr = {
+    #   enable = true;
+    #   settings = {
+    #     screencast = {
+    #       Max_fps = 60;
+    #       #Output_name = "DP-1";
+    #       Chooser_type = "default";
+    #     };
+    #   };
+    # };
+  };
 
   wayland.windowManager.sway = {
     enable = true;
@@ -60,28 +74,4 @@
     };
     systemd.enable = true;
   };
-
-  xdg.configFile."sirula/config.toml".source = (pkgs.formats.toml {}).generate "sirula-config" {
-    # Switch to left side
-    anchor_left = true;
-    anchor_right = false;
-  };
-
-  home.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    MOZ_ENABLE_WAYLAND = "1";
-  };
-
-  home.packages = with pkgs; [
-    #swaylock
-    #iswayidle
-    wl-clipboard
-    mako # notification daemon
-    alacritty # Alacritty is the default terminal in the config
-    wofi
-    sirula # Launcher
-    niri # Considering using instead of Sway
-  ];
-
-  services.gammastep = import ./redshift.nix;
 }

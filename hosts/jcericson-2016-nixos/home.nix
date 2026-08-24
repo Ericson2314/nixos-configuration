@@ -3,7 +3,7 @@
 {
   imports = [
     ../../user
-    ../../user/graphical/wayland.nix
+    ../../user/graphical/wayland
     ../../user/video-games.nix
   ];
 

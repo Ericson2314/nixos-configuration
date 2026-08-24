@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./common.nix
+    ../common.nix
   ];
 
   xsession = {
@@ -36,5 +36,5 @@
     dmenu
   ];
 
-  services.redshift = import ./redshift.nix;
+  services.redshift = import ../redshift.nix;
 }
