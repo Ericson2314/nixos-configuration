@@ -87,21 +87,28 @@ in
     notificationSender = "hydra@localhost";
   };
 
-  services.hydra-queue-runner-dev.enable = true;
+  services.hydra-queue-runner-dev = {
+    enable = true;
+    # Pull what cache.nixos.org already has instead of rebuilding every
+    # missing step from source. Off by default in the module.
+    settings.useSubstitutes = true;
+  };
 
   services.hydra-queue-builder-dev = {
     enable = true;
     queueRunnerAddr = "http://[::1]:50051";
   };
 
-  # Dogfooding ad hoc jobs: the socket is group `hydra`, mode 0660, so
-  # a member of that group can point a client at it with
+  services.hydra-ws-dev.enable = true;
+
+  # Dogfooding ad hoc jobs: the socket is group `hydra-ad-hoc`, mode 0660,
+  # so a member of that group can point a client at it with
   #
   #   NIX_REMOTE=unix:///run/hydra-ad-hoc/socket nix-store --realise ./foo.drv
   #
   # and have Hydra's queue runner and builder do the build.
   services.hydra-ad-hoc-dev.enable = true;
-  users.users.jcericson.extraGroups = [ "hydra" ];
+  users.users.jcericson.extraGroups = [ "hydra-ad-hoc" ];
 
   # Chatty logs while this is being shaken out.
   systemd.services.hydra-ad-hoc-dev.environment.RUST_LOG = "debug";

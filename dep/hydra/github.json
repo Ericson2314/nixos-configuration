@@ -1,8 +1,8 @@
 {
-  "owner": "obsidiansystems",
+  "owner": "nixos",
   "repo": "hydra",
-  "branch": "drv-daemon",
+  "branch": "master",
   "private": false,
-  "rev": "7857f35ef82b055cc95c52c3cf2eec6225274807",
-  "sha256": "0jczq6ci5wxzbw2msh6jsg0d0pgfifkn49mrghycjq1pq161n6g1"
+  "rev": "1d1d8b1c6fdc08444a514f383b291228f19d72d8",
+  "sha256": "18xlnynckf3dzln8fr8ycr2llawc1rwlk18m3f1r7ba2d7bg1cy1"
 }
