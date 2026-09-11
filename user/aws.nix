@@ -6,7 +6,7 @@
   };
 
   home.packages = with pkgs; [
-    awscli
+    awscli2
     ssm-session-manager-plugin
   ];
 }
