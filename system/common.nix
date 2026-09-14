@@ -18,6 +18,13 @@
   # Imperative NixOS containers (`nixos-container`), e.g. for developing
   # services in a throwaway system without a VM.
   boot.enableContainers = true;
+  # Give containers a route out: NAT their veths (imperative containers get a
+  # private network on ve-<name>); keep NetworkManager off those interfaces.
+  networking.nat = {
+    enable = true;
+    internalInterfaces = [ "ve-+" ];
+  };
+  networking.networkmanager.unmanaged = [ "interface-name:ve-*" ];
 
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
