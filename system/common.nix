@@ -15,6 +15,10 @@
   # Faster, nicer input for LUKS
   boot.initrd.systemd.enable = true;
 
+  # Imperative NixOS containers (`nixos-container`), e.g. for developing
+  # services in a throwaway system without a VM.
+  boot.enableContainers = true;
+
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
 
