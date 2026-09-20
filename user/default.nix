@@ -14,6 +14,7 @@
     ./misc-dev.nix
     ./secrets.nix
     ./aws.nix
+    ./iroh-ssh.nix
     ./dark-mode.nix
   ];
 
