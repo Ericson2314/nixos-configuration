@@ -1,10 +1,8 @@
 { lib, pkgs, ... }:
 
+# SSH in over iroh without a public IP; upstream has no NixOS module yet.
+# Log in as a real user (`iroh-ssh jcericson@<id>`), not the one in the banner.
 {
-  environment.systemPackages = [
-    pkgs.iroh-ssh
-  ];
-
   systemd.services.iroh-ssh-server = {
     description = "SSH over Iroh";
     wantedBy = [ "multi-user.target" ];

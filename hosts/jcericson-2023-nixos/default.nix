@@ -10,6 +10,7 @@
     ../../system/common.nix
     ../../system/graphical/wayland.nix
     ../../system/hydra-dogfooding.nix
+    ../../system/iroh-ssh.nix
     ../../system/libinput.nix
     ../../system/libvirt.nix
     ../../system/video-games.nix
