@@ -10,6 +10,9 @@
 
     # Dogfooding nix from source
     ./nix-dogfooding.nix
+
+    # SSH in from anywhere, no public IP needed
+    ./iroh-ssh.nix
   ];
 
   # Faster, nicer input for LUKS
