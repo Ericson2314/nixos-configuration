@@ -7,7 +7,7 @@
     ./fish
     ./git
     ./haskell.nix
-    ./helix
+    #./helix
     ./home-manager.nix
     ./nixpkgs
     ./nvim
