@@ -18,14 +18,9 @@
     }
   ];
 
-  xresources.properties = {
-    "*.dpi" = 120;
-  };
-
   home.packages = with pkgs; [
   ];
 
-  # TODO get alacritty to respect the above, and remove this.
   programs.alacritty.settings.font.size = 13;
 
   home.stateVersion = "20.09";
