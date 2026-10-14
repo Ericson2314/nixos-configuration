@@ -38,8 +38,9 @@
     networkmanager.enable = true; # Easiest to use and most distros use this by default.
   };
 
-  # Set your time zone.
-  time.timeZone = "America/New_York";
+  # Set the time zone from location (geoclue). Override by hand with
+  # `timedatectl set-timezone <Area/City>` (until the next location update).
+  services.automatic-timezoned.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
