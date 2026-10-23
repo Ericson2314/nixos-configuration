@@ -7,7 +7,6 @@ let
     import (nixSrc + "/packaging/dependencies.nix") {
       inherit pkgs;
       inherit (pkgs) stdenv;
-      inputs = { };
     }
   );
 
