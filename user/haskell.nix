@@ -1,15 +1,12 @@
 { pkgs, ... }:
 
 {
-  home.packages = [
-    (import ../dep/obelisk { }).command
-  ]
-  ++ (with pkgs; [
+  home.packages = with pkgs; [
     cabal-install
     haskellPackages.ghcid
     haskellPackages.hasktags
     haskellPackages.nix-thunk
-  ]);
+  ];
 
   programs.git.ignores = [
     "cabal.project.local"
