@@ -16,4 +16,7 @@ in
   imports = [ b4-module ];
 
   programs.b4.enable = true;
+
+  # TODO add Sashiko (https://sashiko.dev, agentic kernel patch review) to
+  # `home.packages` once it is in nixpkgs.
 }
