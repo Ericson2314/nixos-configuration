@@ -13,15 +13,15 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "*" = {
-        controlMaster = "auto";
-        controlPath = "~/.ssh/master-%C";
+        ControlMaster = "auto";
+        ControlPath = "~/.ssh/master-%C";
       };
-      "bitbucket.com".user = "git";
-      "bitbucket.org".user = "git";
-      "github.com".user = "git";
-      "gitlab.com".user = "git";
+      "bitbucket.com".User = "git";
+      "bitbucket.org".User = "git";
+      "github.com".User = "git";
+      "gitlab.com".User = "git";
     };
   };
 }

@@ -23,5 +23,5 @@
 
   programs.alacritty.settings.font.size = 13;
 
-  home.stateVersion = "20.09";
+  home.stateVersion = "26.05";
 }

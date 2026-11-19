@@ -13,7 +13,7 @@
     ];
     # The leading newline makes the generated code not be one big line,
     # which does seem to be valid Lua, but is hard for me to read.
-    extraLuaConfig = ''
+    initLua =''
 
       vim.lsp.enable('clangd')
 
