@@ -6,6 +6,7 @@
     ./bash
     ./fish
     ./git
+    ./b4.nix
     ./haskell.nix
     #./helix
     ./home-manager.nix
