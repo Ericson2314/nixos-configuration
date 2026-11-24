@@ -194,7 +194,6 @@ in
             toggle-keyboard-shortcuts-inhibit = { };
           };
 
-          "Mod+Ctrl+E".quit = { };
           "Ctrl+Alt+Delete".quit = { };
           "Mod+Ctrl+P".power-off-monitors = { };
         };
